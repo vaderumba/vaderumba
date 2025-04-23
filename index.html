@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Va de Rumba</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f8f8f8;
+    }
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    header img {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .foto-principal img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .conciertos ul {
+      list-style: none;
+      padding: 0;
+    }
+    .conciertos li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+    .redes a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px;
+      background-color: #000;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Va de Rumba" />
+    <h1>VA DE RUMBA</h1>
+  </header>
+
+  <section class="foto-principal">
+    <img src="grupo.jpg" alt="Foto del grupo Va de Rumba" />
+  </section>
+
+  <section class="descripcion">
+    <h2>¿Quiénes somos?</h2>
+    <p>
+      Somos <strong>Va de Rumba</strong>, una banda con sabor a calle y alma de escenario. Fusionamos rumba y pop-rock con pasión y energía para que no pares de bailar.
+    </p>
+  </section>
+
+  <section class="conciertos">
+    <h2>Próximos Conciertos</h2>
+    <ul>
+      <li><strong>27 de abril 2025</strong> – Pub La Caverna, Valencia</li>
+      <li><strong>18 de mayo 2025</strong> – Fiestas del Carmen, Torrent</li>
+      <li><strong>15 de junio 2025</strong> – Sala Wah Wah, Valencia</li>
+    </ul>
+  </section>
+
+  <section class="video">
+    <h2>Videoclip destacado</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VWS1fLSmFYU" title="YouTube video" allowfullscreen></iframe>
+  </section>
+
+  <section class="spotify">
+    <h2>Escúchanos en Spotify</h2>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+
+  <section class="contacto">
+    <h2>Contacto</h2>
+    <form action="mailto:tucorreo@dominio.com" method="POST" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <h2>¡Síguenos!</h2>
+    <div class="redes">
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com" target="_blank">YouTube</a>
+      <a href="https://open.spotify.com" target="_blank">Spotify</a>
+    </div>
+    <p>&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
