@@ -1,58 +1,146 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Va de Rumba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       scroll-behavior: smooth;
       background-color: #f8f8f8;
     }
-    header {
-      background-color: #000;
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
       color: white;
+      padding: 10px;
+      z-index: 10;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .menu {
+      display: none;
       flex-direction: column;
+      cursor: pointer;
+    }
+    nav .menu div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px;
+    }
+    nav .links {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+    @media (max-width: 768px) {
+      nav .links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px 0;
+      }
+      nav .links.active {
+        display: flex;
+      }
+      nav .menu {
+        display: flex;
+      }
+    }
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
+      padding-top: 60px;
     }
-    header img {
-      max-width: auto;
-      margin-bottom: 10px;
+    header img.bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    header .logo {
+      max-width: 200px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 4rem;
+      color: white;
+      text-shadow: 2px 2px 4px black;
     }
     section {
       padding: 60px 20px;
       max-width: 900px;
       margin: auto;
     }
-    .foto-principal img {
+    .descripcion, .conciertos, .video, .spotify, .contacto {
+      margin-top: 40px;
+    }
+    .miembros {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .miembros img {
       width: 100%;
       border-radius: 10px;
     }
-    .conciertos ul {
-      list-style: none;
-      padding: 0;
+    .redes-iconos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 2rem;
+      margin-top: 30px;
+      flex-wrap: wrap;
     }
-    .conciertos li {
-      padding: 10px 0;
-      border-bottom: 1px solid #ccc;
-    }
-    .redes a {
-      margin: 0 10px;
-      color: white;
+    .redes-iconos a {
+      color: #111;
       text-decoration: none;
-      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+    .redes-iconos a:hover {
+      transform: scale(1.2);
+    }
+    .video iframe {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: none;
     }
     iframe {
       width: 100%;
       border: none;
-      margin-top: 20px;
       border-radius: 10px;
     }
     form {
@@ -65,6 +153,7 @@
       font-size: 16px;
       border-radius: 5px;
       border: 1px solid #ccc;
+      width: 100%;
     }
     button {
       padding: 10px;
@@ -81,107 +170,123 @@
       text-align: center;
       padding: 40px 20px;
     }
-  
-.imagen-principal {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-.imagen-principal img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
-}
-
-.animable {
-  opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 1.5s ease, transform 1.5s ease;
-}
-
-.animable.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-</style>
+    .subir {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      z-index: 20;
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .redes-iconos {
+        font-size: 1.5rem;
+        gap: 15px;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
-<header class="imagen-principal">
-  <img src="grupo.jpg" alt="Foto del grupo Va de Rumba" class="animable" />
-</header>
+  <nav>
+    <div class="menu" onclick="document.querySelector('.links').classList.toggle('active')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="links">
+      <a href="#descripcion">¿Quiénes somos?</a>
+      <a href="#miembros">Miembros</a>
+      <a href="#conciertos">Conciertos</a>
+      <a href="#video">Videoclip</a>
+      <a href="#spotify">Spotify</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
 
-<section class="logo-secundario" style="text-align: center; padding: 40px 0;">
-  <img src="logo.png" alt="Logo Va de Rumba" style="max-width: 150px; display: block; margin: 0 auto 20px;" />
-  <h1>VA DE RUMBA</h1>
-</section>
+  <header>
+    <img class="bg" src="image00132.jpg" alt="Foto del grupo Va de Rumba" />
+    <img class="logo" src="20230907_111146_0001.png" alt="Logo Va de Rumba" />
+    <h1>VA DE RUMBA</h1>
+  </header>
 
+  <a href="#" class="subir" title="Volver arriba">↑</a>
 
-  <section class="descripcion">
+  <section id="descripcion" class="descripcion">
     <h2>¿Quiénes somos?</h2>
-    <p>
-      Somos <strong>Va de Rumba</strong>, un grupito de bolos no cobrados, donde la premisa es prometer cosas que no se cumplen y sin expectativas de nada, suicidemosnos, total pa lo que nos queda en este mundo.👹
-    </p>
+    <p>Somos Va de Rumba, una banda de Valencia que mezcla rumba, pop y rock con energía y buen rollo.</p>
   </section>
 
-  <section class="conciertos">
-    <h2>Próximos Conciertos</h2>
+  <section id="miembros" class="miembros">
+    <div>
+      <img src="img/toni.jpg" alt="Toni">
+      <p>Toni - Voz y guitarra</p>
+    </div>
+    <div>
+      <img src="img/alejandro.jpg" alt="Alejandro">
+      <p>Alejandro - Voz</p>
+    </div>
+    <div>
+      <img src="img/jose.jpg" alt="Jose">
+      <p>Jose - Voz</p>
+    </div>
+    <div>
+      <img src="img/ruben.jpg" alt="Rubén">
+      <p>Rubén - Percusión</p>
+    </div>
+    <div>
+      <img src="img/rafa.jpg" alt="Rafa">
+      <p>Rafa - Bajo</p>
+    </div>
+  </section>
+
+  <section id="conciertos" class="conciertos">
+    <h2>Conciertos</h2>
     <ul>
-      <li><strong>26 de abril 2025</strong> – The King Night Club, Torrent</li>
-      <li><strong>18 de mayo 2025</strong> – Casa Carla, Torrent</li>
-      <li><strong>15 de junio 2025</strong> – Hotel Sala X La Trocha, Benidorm</li>
+      <li>27 abril - Pub La Cabaña, Valencia</li>
+      <li>18 mayo - Festival Rumbero, Castellón</li>
+      <li>8 junio - Terraza El Marítimo, Valencia</li>
     </ul>
   </section>
 
-  <section class="video">
-    <h2>Videoclip destacado</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VWS1fLSmFYU" title="YouTube video" allowfullscreen></iframe>
+  <section id="video" class="video">
+    <h2>Videoclip</h2>
+    <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU" allowfullscreen></iframe>
   </section>
 
-  <section class="spotify">
+  <section id="spotify" class="spotify">
     <h2>Escúchanos en Spotify</h2>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </section>
 
-  <section class="contacto">
+  <section id="contacto" class="contacto">
     <h2>Contacto</h2>
-    <form action="mailto:grupovaderumba@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required />
-      <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu email" required>
+      <textarea placeholder="Mensaje" required></textarea>
       <button type="submit">Enviar</button>
     </form>
   </section>
 
+  <div class="redes-iconos">
+    <a href="https://instagram.com/tuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/tuusuario" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://youtube.com/@tuusuario" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/tu-artista-id" target="_blank"><i class="fab fa-spotify"></i></a>
+  </div>
+
   <footer>
-    <h2>¡Síguenos!</h2>
-    <div class="redes">
-      <a href="https://www.instagram.com/vaderumba/" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/@VadeRumba" target="_blank">YouTube</a>
-      <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=9Lt_5OKcTe-QLb5i5bQB_Q" target="_blank">Spotify</a>
-    </div>
-    <p>&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
+    <p>© 2025 Va de Rumba - Todos los derechos reservados.</p>
   </footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  }, { threshold: 0.4 });
-
-  document.querySelectorAll('.animable').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
