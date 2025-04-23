@@ -81,17 +81,34 @@
       text-align: center;
       padding: 40px 20px;
     }
-  </style>
+  
+.imagen-principal {
+  overflow: hidden;
+}
+
+.animable {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.animable.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+</style>
 </head>
 <body>
-  <header>
-    <img src="grupo.jpg" alt="Foto del grupo Va de Rumba" />
-    <h1>VA DE RUMBA</h1>
-  </header>
+  
+<header class="imagen-principal">
+  <img src="grupo.jpg" alt="Foto del grupo Va de Rumba" class="animable" />
+</header>
 
-  <section class="foto-principal">
-     <img src="logo.png" alt="Logo Va de Rumba" />
-  </section>
+<section class="logo-secundario" style="text-align: center; padding: 40px 0;">
+  <img src="logo.png" alt="Logo Va de Rumba" style="max-width: 150px; display: block; margin: 0 auto 20px;" />
+  <h1>VA DE RUMBA</h1>
+</section>
+
 
   <section class="descripcion">
     <h2>¿Quiénes somos?</h2>
@@ -138,5 +155,19 @@
     </div>
     <p>&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
   </footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.animable').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
