@@ -173,7 +173,7 @@
     }
     .subir {
       position: fixed;
-      top: 50%;
+      bottom: 20px;
       right: 20px;
       background-color: #000;
       color: white;
@@ -184,11 +184,16 @@
       font-size: 1.5rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       z-index: 20;
-      transform: translateY(-50%);
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .subir.visible {
+      opacity: 1;
+      pointer-events: auto;
     }
     .subir:hover {
-      transform: translateY(-50%) scale(1.1);
+      transform: scale(1.1);
     }
     @media (max-width: 480px) {
       h1 {
@@ -201,6 +206,16 @@
     }
   </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      const subirBtn = document.querySelector('.subir');
+      if (window.scrollY > 100) {
+        subirBtn.classList.add('visible');
+      } else {
+        subirBtn.classList.remove('visible');
+      }
+    });
+  </script>
 </head>
 <body>
   <nav>
@@ -218,10 +233,81 @@
       <a href="#contacto">Contacto</a>
     </div>
   </nav>
+
   <header>
-    <img class="bg" src="image00132.jpg" alt="Foto del grupo Va de Rumba" />
+    <img class="bg" src="/mnt/data/image00132.jpg" alt="Foto del grupo Va de Rumba" />
     <h1>VA DE RUMBA</h1>
   </header>
+
   <a href="#" class="subir" title="Volver arriba">↑</a>
+
+
+  <section id="descripcion" class="descripcion">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos Va de Rumba, una banda de Valencia que mezcla rumba, pop y rock con energía y buen rollo.</p>
+  </section>
+
+  <section id="miembros" class="miembros">
+    <div>
+      <img src="img/toni.jpg" alt="Toni">
+      <p>Toni - Voz y guitarra</p>
+    </div>
+    <div>
+      <img src="img/alejandro.jpg" alt="Alejandro">
+      <p>Alejandro - Voz</p>
+    </div>
+    <div>
+      <img src="img/jose.jpg" alt="Jose">
+      <p>Jose - Voz</p>
+    </div>
+    <div>
+      <img src="img/ruben.jpg" alt="Rubén">
+      <p>Rubén - Percusión</p>
+    </div>
+    <div>
+      <img src="img/rafa.jpg" alt="Rafa">
+      <p>Rafa - Bajo</p>
+    </div>
+  </section>
+
+  <section id="conciertos" class="conciertos">
+    <h2>Conciertos</h2>
+    <ul>
+      <li>27 abril - Pub La Cabaña, Valencia</li>
+      <li>18 mayo - Festival Rumbero, Castellón</li>
+      <li>8 junio - Terraza El Marítimo, Valencia</li>
+    </ul>
+  </section>
+
+  <section id="video" class="video">
+    <h2>Videoclip</h2>
+    <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU" allowfullscreen></iframe>
+  </section>
+
+  <section id="spotify" class="spotify">
+    <h2>Escúchanos en Spotify</h2>
+    <iframe src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu email" required>
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <div class="redes-iconos">
+    <a href="https://instagram.com/tuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/tuusuario" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://youtube.com/@tuusuario" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/tu-artista-id" target="_blank"><i class="fab fa-spotify"></i></a>
+  </div>
+
+  <footer>
+    <p>© 2025 Va de Rumba - Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
