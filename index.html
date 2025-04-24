@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Va de Rumba</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
@@ -13,7 +13,14 @@
     font-family: 'Bebas Neue', sans-serif;
     scroll-behavior: smooth;
     background-color: #f8f8f8;
+    animation: fadeIn 1s ease;
   }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
   nav {
     position: fixed;
     top: 0;
@@ -27,30 +34,36 @@
     justify-content: space-between;
     align-items: center;
   }
+
   nav .menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
   }
+
   nav .menu div {
     width: 25px;
     height: 3px;
     background-color: white;
     margin: 4px;
   }
+
   nav .links {
     display: flex;
     gap: 15px;
   }
+
   nav a {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
     font-family: 'Anton', sans-serif;
   }
+
   nav a:hover {
     color: #f39c12;
   }
+
   @media (max-width: 768px) {
     nav .links {
       display: none;
@@ -69,6 +82,7 @@
       display: flex;
     }
   }
+
   header {
     position: relative;
     height: 100vh;
@@ -79,6 +93,7 @@
     text-align: center;
     padding-top: 60px;
   }
+
   header img.bg {
     position: absolute;
     top: 0; left: 0;
@@ -89,6 +104,7 @@
     z-index: -1;
     filter: brightness(0.4);
   }
+
   h1 {
     font-size: 8rem;
     color: white;
@@ -96,23 +112,25 @@
     text-transform: uppercase;
     font-family: 'Anton', sans-serif;
   }
+
   h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-size: 4rem;
     font-family: 'Anton', sans-serif;
   }
-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
 
-@media (max-width: 768px) {
   section {
-    padding: 30px 15px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
   }
-}
+
+  @media (max-width: 768px) {
+    section {
+      padding: 30px 15px;
+    }
   }
+
   .redes-iconos {
     display: flex;
     justify-content: center;
@@ -121,14 +139,17 @@ section {
     margin-top: 30px;
     flex-wrap: wrap;
   }
+
   .redes-iconos a {
     color: #111;
     text-decoration: none;
     transition: transform 0.3s ease;
   }
+
   .redes-iconos a:hover {
     transform: scale(1.2);
   }
+
   .subir {
     position: fixed;
     bottom: 20px;
@@ -145,17 +166,21 @@ section {
     display: none;
     transition: opacity 0.3s ease;
   }
+
   .subir.mostrar {
     display: block;
   }
+
   .subir:hover {
     transform: scale(1.1);
   }
+
   iframe {
     width: 100%;
     height: 315px;
     margin-top: 20px;
   }
+
   .miembros {
     display: flex;
     flex-wrap: wrap;
@@ -163,9 +188,11 @@ section {
     gap: 40px;
     margin-top: 40px;
   }
+
   .miembro {
     text-align: center;
   }
+
   .miembro img {
     width: 200px;
     height: 200px;
@@ -173,16 +200,17 @@ section {
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
+
   .miembro h3 {
     margin-top: 15px;
     font-size: 2rem;
   }
+
   .miembro p {
     margin: 5px 0;
     font-size: 1.2rem;
   }
 
-  /* Ajustes móviles */
   @media (max-width: 768px) {
     header {
       height: auto;
@@ -215,15 +243,18 @@ section {
       height: 150px;
     }
   }
-.iconos-redes img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-.iconos-redes a:hover img {
-  transform: scale(1.2);
-}
+
+  .iconos-redes img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .iconos-redes a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+  }
 
 </style>
   <script>
@@ -239,7 +270,7 @@ section {
 </head>
 <body>
   <nav>
-    <div class="menu" onclick="document.querySelector('.links').classList.toggle('active')">
+    <div class="menu" role="button" aria-label="Menú de navegación" onclick="document.querySelector('.links').classList.toggle('active')">
       <div></div>
       <div></div>
       <div></div>
@@ -260,7 +291,6 @@ section {
 
   <a href="#" class="subir" title="Volver arriba">↑</a>
 
-  
   <section id="conciertos">
     <h2>Próximos conciertos</h2>
     <ul style="font-size: 1.5rem; list-style: none; padding: 0;">
@@ -271,26 +301,23 @@ section {
     </ul>
   </section>
 
-
-  
-<section id="multimedia">
-  <h2>Multimedia</h2>
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen width="100%" height="315"></iframe>
-    <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen width="100%" height="315"></iframe>
-  </div>
-  <div class="spotify" style="text-align: center;">
-    <iframe
-      style="border-radius:12px; width: 100%; max-width: 400px;"
-      src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A"
-      height="200"
-      frameborder="0"
-      allowtransparency="true"
-      allow="encrypted-media">
-    </iframe>
-  </div>
-</section>
-
+  <section id="multimedia">
+    <h2>Multimedia</h2>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen></iframe>
+    </div>
+    <div class="spotify" style="text-align: center;">
+      <iframe
+        style="border-radius:12px; width: 100%; max-width: 400px;"
+        src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A"
+        height="200"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media">
+      </iframe>
+    </div>
+  </section>
 
   <section id="miembros">
     <h2>Miembros</h2>
@@ -303,19 +330,16 @@ section {
     </div>
   </section>
 
-  
   <section id="redes" class="redes-sociales">
-  <h2>Síguenos</h2>
-  <div class="iconos-redes">
-    <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-    <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-    <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
-    <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
-    <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
-  </div>
-</section>
-
-
+    <h2>Síguenos</h2>
+    <div class="iconos-redes">
+      <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+      <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+      <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+      <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
+      <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
+    </div>
+  </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
@@ -328,10 +352,8 @@ section {
     </form>
   </section>
 
-  
   <footer style="background-color: black; color: white; text-align: center; padding: 30px 20px; font-size: 1.2rem;">
-<p style="margin: 0;">&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
+    <p style="margin: 0;">&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>
