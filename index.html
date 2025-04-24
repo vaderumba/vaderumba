@@ -9,6 +9,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
+.spotify-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.spotify-clip {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 360px; /* puedes ajustar si lo ves corto/largo */
+}
+
+.spotify-clip iframe {
+  width: 100%;
+  height: 380px;
+  border: none;
+  margin-top: -10px; /* 👈 TRUCO: sube el contenido 10px para ocultar esa franja negra */
+  display: block;
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -418,16 +444,18 @@ header img.bg {
       <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen></iframe>
     </div>
-    <div class="spotify" style="text-align: center;">
-      <iframe
-        style="border-radius:12px; width: 100%; max-width: 400px;"
-        src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A"
-        height="200"
-        frameborder="0"
-        allowtransparency="true"
-        allow="encrypted-media">
-      </iframe>
-    </div>
+<div class="spotify-card">
+  <div class="spotify-clip">
+    <iframe
+      src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+
+
   </section>
 
   <section id="miembros">
