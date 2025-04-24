@@ -9,6 +9,74 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
+section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+section ul {
+  margin-bottom: 0;
+}
+
+
+.bio-nosotros {
+  font-size: 1.4rem;
+  font-family: 'Bebas Neue', sans-serif;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+  text-align: center;
+  color: #333;
+}
+
+
+
+.iconos-redes-mejorado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.tarjeta-red {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.tarjeta-red:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.tarjeta-red img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-red:hover img {
+  transform: scale(1.1);
+}
+
+.tarjeta-red span {
+  font-family: 'Anton', sans-serif;
+  color: #111;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+
 .spotify-card {
   width: 100%;
   max-width: 600px;
@@ -393,6 +461,72 @@ header img.bg {
 }
 
 
+
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+header img.bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  filter: brightness(0.5);
+  animation: pan 30s ease-in-out infinite alternate;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+   background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2)); 
+  z-index: -1;
+}
+
+.header-content {
+  z-index: 1;
+}
+
+h1 {
+  font-size: 8rem;
+  color: white;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  font-family: 'Anton', sans-serif;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  animation: fadeInUp 1.5s ease-out both;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
 </style>
   <script>
     window.addEventListener('scroll', () => {
@@ -415,16 +549,20 @@ header img.bg {
   <div class="links">
     <a href="#conciertos">CONCIERTOS</a>
     <a href="#multimedia">MULTIMEDIA</a>
-    <a href="#miembros">MIEMBROS</a>
+    <a href="#miembros">NOSOTROS</a>
     <a href="#redes">REDES SOCIALES</a>
     <a href="#contacto">CONTACTO</a>
   </div>
 </nav>
 
   <header>
-    <img class="bg" src="Grupo.jpg" alt="Foto del grupo Va de Rumba" />
+  <div class="overlay"></div>
+  <img class="bg" src="Grupo.jpg" alt="Foto del grupo Va de Rumba" />
+  <div class="header-content">
     <h1>VA DE RUMBA</h1>
-  </header>
+  </div>
+</header>
+
 
  <a href="#" class="subir" aria-label="Volver arriba">↑</a>
 
@@ -459,7 +597,13 @@ header img.bg {
   </section>
 
   <section id="miembros">
-    <h2>Miembros</h2>
+    <h2>Nosotros</h2>
+<p class="bio-nosotros">
+ Somos Va de Rumba, cinco colegas con ganas de montar la fiesta allá donde vayamos. Mezclamos rumba y pop-rock para que no puedas quedarte quieto.
+En el grupo estamos Toni, Alejandro y Jose dándole a la voz, Rubén marcando el ritmo en la percusión y Rafa metiendo caña con el bajo. Hacemos música para disfrutar, cantar a gritos y pasarlo en grande.
+Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de rumba con nosotros!
+</p>
+
     <div class="miembros">
       <div class="miembro"><img src="TONI.JPG" alt="Toni" /><h3>Toni</h3><p>Voz y guitarra</p></div>
       <div class="miembro"><img src="ALEJANDRO.JPG" alt="Alejandro" /><h3>Alejandro</h3><p>Voz</p></div>
@@ -469,18 +613,23 @@ header img.bg {
     </div>
   </section>
 
-  <section id="redes" class="redes-sociales">
-    <h2>Síguenos</h2>
-    <div class="iconos-redes">
-  <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-  <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-  <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
-  <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
-  <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
-</div>
-
-
-  </section>
+<section id="redes" class="redes-sociales">
+  <h2>Síguenos</h2>
+  <div class="iconos-redes-mejorado">
+    <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red">
+      <img src="instagram.png" alt="Instagram">
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank" class="tarjeta-red">
+      <img src="tiktok.png" alt="TikTok">
+      <span>TikTok</span>
+    </a>
+    <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank" class="tarjeta-red">
+      <img src="facebook.png" alt="Facebook">
+      <span>Facebook</span>
+    </a>
+  </div>
+</section>
 
   <section id="contacto">
     <h2>Contacto</h2>
