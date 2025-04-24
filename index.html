@@ -345,6 +345,26 @@ header img.bg {
   animation: pan 30s ease-in-out infinite alternate;
 }
 
+/* Animación del botón hamburguesa a X */
+.menu div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: all 0.4s ease;
+}
+
+.menu.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 
 
 </style>
@@ -450,19 +470,26 @@ header img.bg {
   </footer>
 
 <script>
-  // Menú responsive
-  document.querySelector('.menu').addEventListener('click', () => {
-    document.querySelector('.links').classList.toggle('active');
+  const menuBtn = document.querySelector('.menu');
+  const links = document.querySelector('.links');
+
+  menuBtn.addEventListener('click', () => {
+    links.classList.toggle('active');
+    menuBtn.classList.toggle('active'); // animación del botón
   });
 
-  // Botón "subir" optimizado (evitando reflow)
+  document.querySelectorAll('nav .links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        links.classList.remove('active');
+        menuBtn.classList.remove('active'); // cerrar animación también
+      }
+    });
+  });
+
   const botonSubir = document.querySelector('.subir');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      botonSubir.classList.add('mostrar');
-    } else {
-      botonSubir.classList.remove('mostrar');
-    }
+    botonSubir.classList.toggle('mostrar', window.scrollY > 200);
   });
 </script>
 
