@@ -4,10 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Va de Rumba</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+.subir {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.subir.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.iconos-redes a {
+  font-size: 2.5rem;
+  color: #111;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.iconos-redes a:hover {
+  transform: scale(1.2);
+  color: #f39c12;
+}
+
+
   body {
     margin: 0;
     font-family: 'Bebas Neue', sans-serif;
@@ -289,7 +317,7 @@
     <h1>VA DE RUMBA</h1>
   </header>
 
-  <a href="#" class="subir" title="Volver arriba">↑</a>
+ <a href="#" class="subir" aria-label="Volver arriba">↑</a>
 
   <section id="conciertos">
     <h2>Próximos conciertos</h2>
@@ -333,12 +361,14 @@
   <section id="redes" class="redes-sociales">
     <h2>Síguenos</h2>
     <div class="iconos-redes">
-      <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-      <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-      <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
-      <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
-      <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
-    </div>
+  <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+  <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+  <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+  <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
+  <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
+</div>
+
+
   </section>
 
   <section id="contacto">
@@ -355,5 +385,25 @@
   <footer style="background-color: black; color: white; text-align: center; padding: 30px 20px; font-size: 1.2rem;">
     <p style="margin: 0;">&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
   </footer>
+
+<script>
+  // Menú responsive
+  document.querySelector('.menu').addEventListener('click', () => {
+    document.querySelector('.links').classList.toggle('active');
+  });
+
+  // Botón "subir" optimizado (evitando reflow)
+  const botonSubir = document.querySelector('.subir');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      botonSubir.classList.add('mostrar');
+    } else {
+      botonSubir.classList.remove('mostrar');
+    }
+  });
+</script>
+
+
+
 </body>
 </html>
