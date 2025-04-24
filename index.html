@@ -6,194 +6,209 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Va de Rumba</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Bebas Neue', sans-serif;
-      scroll-behavior: smooth;
-      background-color: #f8f8f8;
-    }
-    nav {
-      position: fixed;
-      top: 0;
+  body {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f8f8f8;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  nav .menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+  }
+  nav .links {
+    display: flex;
+    gap: 15px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Anton', sans-serif;
+  }
+  nav a:hover {
+    color: #f39c12;
+  }
+  @media (max-width: 768px) {
+    nav .links {
+      display: none;
+      position: absolute;
+      top: 60px;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 10px;
-      z-index: 10;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 10px 0;
+    }
+    nav .links.active {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
     nav .menu {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    nav .menu div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px;
-    }
-    nav .links {
       display: flex;
+    }
+  }
+  header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+  }
+  header img.bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    filter: brightness(0.4);
+  }
+  h1 {
+    font-size: 8rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+  }
+  h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-family: 'Anton', sans-serif;
+  }
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  .redes-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 3rem;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  .redes-iconos a {
+    color: #111;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .redes-iconos a:hover {
+    transform: scale(1.2);
+  }
+  .subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 20;
+    display: none;
+    transition: opacity 0.3s ease;
+  }
+  .subir.mostrar {
+    display: block;
+  }
+  .subir:hover {
+    transform: scale(1.1);
+  }
+  iframe {
+    width: 100%;
+    height: 315px;
+    margin-top: 20px;
+  }
+  .miembros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .miembro {
+    text-align: center;
+  }
+  .miembro img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  .miembro h3 {
+    margin-top: 15px;
+    font-size: 2rem;
+  }
+  .miembro p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+  }
+
+  /* Ajustes móviles */
+  @media (max-width: 768px) {
+    header {
+      height: auto;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+
+    header img.bg {
+      height: auto;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 3rem;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    .redes-iconos {
+      font-size: 2rem;
       gap: 15px;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-family: 'Anton', sans-serif;
-    }
-    nav a:hover {
-      color: #f39c12;
-    }
-    @media (max-width: 768px) {
-      nav .links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 10px 0;
-      }
-      nav .links.active {
-        display: flex;
-      }
-      nav .menu {
-        display: flex;
-      }
-    }
-    header {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding-top: 60px;
-    }
-    header img.bg {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: -1;
-      filter: brightness(0.4);
-    }
-    h1 {
-      font-size: 8rem;
-      color: white;
-      text-shadow: 2px 2px 4px black;
-      text-transform: uppercase;
-      font-family: 'Anton', sans-serif;
-    }
-    h2, h3, h4, h5, h6 {
-      text-transform: uppercase;
-      font-size: 4rem;
-      font-family: 'Anton', sans-serif;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .redes-iconos {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      font-size: 3rem;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .redes-iconos a {
-      color: #111;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-    .redes-iconos a:hover {
-      transform: scale(1.2);
-    }
-    .subir {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: rgba(0,0,0,0.3);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50%;
-      text-align: center;
-      text-decoration: none;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      z-index: 20;
-      display: none;
-      transition: opacity 0.3s ease;
-    }
-    .subir.mostrar {
-      display: block;
-    }
-    .subir:hover {
-      transform: scale(1.1);
-    }
-    iframe {
-      width: 100%;
-      height: 315px;
-      margin-top: 20px;
-    }
-    .miembros {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 40px;
-    }
-    .miembro {
-      text-align: center;
-    }
+
     .miembro img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      width: 150px;
+      height: 150px;
     }
-    .miembro h3 {
-      margin-top: 15px;
-      font-size: 2rem;
-    }
-    .miembro p {
-      margin: 5px 0;
-      font-size: 1.2rem;
-    }
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 4rem;
-      }
-      h2 {
-        font-size: 3rem;
-      }
-      .redes-iconos {
-        font-size: 2rem;
-        gap: 15px;
-      }
-      header {
-        height: 80vh;
-      }
-      .miembro img {
-        width: 150px;
-        height: 150px;
-      }
-    }
-  </style>
+  }
+</style>
   <script>
     window.addEventListener('scroll', () => {
       const subir = document.querySelector('.subir');
@@ -213,11 +228,11 @@
       <div></div>
     </div>
     <div class="links">
-      <a href="#conciertos">Conciertos</a>
-      <a href="#multimedia">Multimedia</a>
-      <a href="#miembros">Miembros</a>
-      <a href="#redes">Redes Sociales</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#conciertos">CONCIERTOS</a>
+      <a href="#multimedia">MULTIMEDIA</a>
+      <a href="#miembros">MIEMBROS</a>
+      <a href="#redes">REDES SOCIALES</a>
+      <a href="#contacto">CONTACTO</a>
     </div>
   </nav>
 
@@ -240,16 +255,25 @@
   </section>
 
 
-  <section id="multimedia">
-    <h2>Multimedia</h2>
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg_2" allowfullscreen></iframe>
-    </div>
-    <div class="spotify">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" width="100%" height="152" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
+  
+<section id="multimedia">
+  <h2>Multimedia</h2>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen width="100%" height="315"></iframe>
+    <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen width="100%" height="315"></iframe>
+  </div>
+  <div class="spotify" style="text-align: center;">
+    <iframe
+      style="border-radius:12px; width: 100%; max-width: 400px;"
+      src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A"
+      height="200"
+      frameborder="0"
+      allowtransparency="true"
+      allow="encrypted-media">
+    </iframe>
+  </div>
+</section>
+
 
   <section id="miembros">
     <h2>Miembros</h2>
@@ -262,21 +286,18 @@
     </div>
   </section>
 
-  <section id="redes">
+  
+  <section id="redes" class="redes-sociales">
     <h2>Síguenos</h2>
-    <div class="redes-iconos">
-  <a href="https://www.instagram.com/vaderumba/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><i class="fab fa-tiktok"></i></a>
-  <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><i class="fab fa-spotify"></i></a>
-  <a href="https://www.youtube.com/@VadeRumba" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.instagram.com/vaderumba/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
-      <a href="https://www.youtube.com/@VadeRumba" target="_blank"><i class="fab fa-youtube"></i></a>
+    <div class="iconos-redes">
+      <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+      <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+      <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+      <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
+      <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
     </div>
   </section>
+
 
 
   <section id="contacto">
@@ -290,8 +311,10 @@
     </form>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Va de Rumba</p>
+  
+  <footer style="background-color: black; color: white; text-align: center; padding: 30px 20px; font-size: 1.2rem;">
+<p style="margin: 0;">&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
