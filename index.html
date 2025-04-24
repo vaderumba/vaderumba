@@ -451,9 +451,9 @@ header img.bg {
 
 <script>
   // Menú responsive
-document.querySelector('.menu').addEventListener('click', () => {
-  document.querySelector('.links').classList.toggle('active');
-});
+  document.querySelector('.menu').addEventListener('click', () => {
+    document.querySelector('.links').classList.toggle('active');
+  });
 
   // Botón "subir" optimizado (evitando reflow)
   const botonSubir = document.querySelector('.subir');
@@ -465,32 +465,6 @@ document.querySelector('.menu').addEventListener('click', () => {
     }
   });
 </script>
-
-<script>
-  // Menú responsive
-  const menuBtn = document.querySelector('.menu');
-  const links = document.querySelector('.links');
-
-  menuBtn.addEventListener('click', () => {
-    links.classList.toggle('active');
-  });
-
-  // Cerrar el menú al hacer clic en un enlace (solo en móvil)
-  document.querySelectorAll('nav .links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        links.classList.remove('active');
-      }
-    });
-  });
-
-  // Botón "subir"
-  const botonSubir = document.querySelector('.subir');
-  window.addEventListener('scroll', () => {
-    botonSubir.classList.toggle('mostrar', window.scrollY > 200);
-  });
-</script>
-
 
 </body>
 </html>
