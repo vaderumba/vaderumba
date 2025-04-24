@@ -76,10 +76,13 @@ html {
     margin: 4px;
   }
 
-  nav .links {
-    display: flex;
-    gap: 15px;
-  }
+nav .links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
 
   nav a {
     color: white;
@@ -92,28 +95,28 @@ html {
     color: #f39c12;
   }
 
-  @media (max-width: 768px) {
-    nav .links {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.9);
-      padding: 10px 0;
-    }
-    nav .links.active {
-      display: flex;
-    }
-    nav .menu {
-      display: flex;
-    }
-
-nav .links {
-  gap: 5px; /* o 0 si quieres que no haya espacio en absoluto */
-}
+ @media (max-width: 768px) {
+  nav .links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    gap: 5px; /* Ajustado */
+    text-align: center;
   }
+
+  nav .links.active {
+    display: flex;
+  }
+
+  nav .menu {
+    display: flex;
+  }
+}
 
   header {
     position: relative;
@@ -155,6 +158,7 @@ nav .links {
     padding: 40px 20px;
     max-width: 900px;
     margin: auto;
+ text-align: center;
   }
 
   @media (max-width: 768px) {
@@ -287,6 +291,56 @@ nav .links {
     transform: scale(1.2);
     filter: brightness(1.2);
   }
+
+/* Centrar títulos */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+/* Centrar texto de los enlaces del menú */
+nav .links {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Ajuste en móvil: centrado también */
+@media (max-width: 768px) {
+  nav .links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    gap: 5px;
+    text-align: center;
+  }
+
+  nav .links.active {
+    display: flex;
+  }
+
+  nav .menu {
+    display: flex;
+  }
+}
+
+@keyframes pan {
+  0% {
+    transform: scale(1.1) translateX(0);
+  }
+  100% {
+    transform: scale(1.1) translateX(-2%);
+  }
+}
+
+header img.bg {
+  animation: pan 30s ease-in-out infinite alternate;
+}
+
+
 
 </style>
   <script>
