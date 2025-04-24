@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Va de Rumba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Bebas Neue', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f8f8f8;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    nav .menu div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px;
+    }
+    nav .links {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-family: 'Anton', sans-serif;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+    @media (max-width: 768px) {
+      nav .links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px 0;
+      }
+      nav .links.active {
+        display: flex;
+      }
+      nav .menu {
+        display: flex;
+      }
+    }
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 60px;
+    }
+    header img.bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+    h1 {
+      font-size: 8rem;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+      text-transform: uppercase;
+      font-family: 'Anton', sans-serif;
+    }
+    h2, h3, h4, h5, h6 {
+      text-transform: uppercase;
+      font-size: 4rem;
+      font-family: 'Anton', sans-serif;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .redes-iconos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 3rem;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .redes-iconos a {
+      color: #111;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .redes-iconos a:hover {
+      transform: scale(1.2);
+    }
+    .subir {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0,0,0,0.3);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 20;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+    .subir.mostrar {
+      display: block;
+    }
+    .subir:hover {
+      transform: scale(1.1);
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
+      margin-top: 20px;
+    }
+    .miembros {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .miembro {
+      text-align: center;
+    }
+    .miembro img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .miembro h3 {
+      margin-top: 15px;
+      font-size: 2rem;
+    }
+    .miembro p {
+      margin: 5px 0;
+      font-size: 1.2rem;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 4rem;
+      }
+      h2 {
+        font-size: 3rem;
+      }
+      .redes-iconos {
+        font-size: 2rem;
+        gap: 15px;
+      }
+      header {
+        height: 80vh;
+      }
+      .miembro img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      const subir = document.querySelector('.subir');
+      if (window.scrollY > 200) {
+        subir.classList.add('mostrar');
+      } else {
+        subir.classList.remove('mostrar');
+      }
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="menu" onclick="document.querySelector('.links').classList.toggle('active')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="links">
+      <a href="#conciertos">Conciertos</a>
+      <a href="#multimedia">Multimedia</a>
+      <a href="#miembros">Miembros</a>
+      <a href="#redes">Redes Sociales</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <header>
+    <img class="bg" src="Grupo.jpg" alt="Foto del grupo Va de Rumba" />
+    <h1>VA DE RUMBA</h1>
+  </header>
+
+  <a href="#" class="subir" title="Volver arriba">↑</a>
+
+  
+  <section id="conciertos">
+    <h2>Próximos conciertos</h2>
+    <ul style="font-size: 1.5rem; list-style: none; padding: 0;">
+      <li>📍 <strong>4 Mayo</strong> — Destino Puerto Valencia, 17:00h</li>
+      <li>📍 <strong>10 Mayo</strong> — La Torreta 1888, Torrent, 18:00h</li>
+      <li>📍 <strong>15 Junio</strong> — Destino Puerto Valencia, 17:00h</li>
+      <li>📍 <strong>5 Julio</strong> — La Torreta 1888, Torrent, 18:00h</li>
+    </ul>
+  </section>
+
+
+  <section id="multimedia">
+    <h2>Multimedia</h2>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg_2" allowfullscreen></iframe>
+    </div>
+    <div class="spotify">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" width="100%" height="152" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section id="miembros">
+    <h2>Miembros</h2>
+    <div class="miembros">
+      <div class="miembro"><img src="TONI.JPG" alt="Toni" /><h3>Toni</h3><p>Voz y guitarra</p></div>
+      <div class="miembro"><img src="ALEJANDRO.JPG" alt="Alejandro" /><h3>Alejandro</h3><p>Voz</p></div>
+      <div class="miembro"><img src="JOSE.JPG" alt="Jose" /><h3>Jose</h3><p>Voz</p></div>
+      <div class="miembro"><img src="RUBÉN.JPG" alt="Rubén" /><h3>Rubén</h3><p>Percusión</p></div>
+      <div class="miembro"><img src="RAFA.JPG" alt="Rafa" /><h3>Rafa</h3><p>Bajo</p></div>
+    </div>
+  </section>
+
+  <section id="redes">
+    <h2>Síguenos</h2>
+    <div class="redes-iconos">
+  <a href="https://www.instagram.com/vaderumba/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><i class="fab fa-spotify"></i></a>
+  <a href="https://www.youtube.com/@VadeRumba" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/vaderumba/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://www.youtube.com/@VadeRumba" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="https://formspree.io/f/xwpokyjj" method="POST" style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
+      <input type="text" name="nombre" placeholder="Tu nombre" required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;">
+      <input type="email" name="email" placeholder="Tu email" required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;">
+      <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje..." required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;"></textarea>
+      <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" style="padding: 12px; font-size: 1.4rem; background-color: black; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Anton', sans-serif; transition: background 0.3s ease;">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Va de Rumba</p>
+  </footer>
+</body>
+</html>
