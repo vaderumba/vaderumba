@@ -101,10 +101,17 @@
     font-size: 4rem;
     font-family: 'Anton', sans-serif;
   }
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
   section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
+    padding: 30px 15px;
+  }
+}
   }
   .redes-iconos {
     display: flex;
@@ -208,6 +215,16 @@
       height: 150px;
     }
   }
+.iconos-redes img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.iconos-redes a:hover img {
+  transform: scale(1.2);
+}
+
 </style>
   <script>
     window.addEventListener('scroll', () => {
@@ -288,15 +305,15 @@
 
   
   <section id="redes" class="redes-sociales">
-    <h2>Síguenos</h2>
-    <div class="iconos-redes">
-      <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-      <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-      <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
-      <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
-      <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
-    </div>
-  </section>
+  <h2>Síguenos</h2>
+  <div class="iconos-redes">
+    <a href="https://www.instagram.com/vaderumba/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+    <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+    <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+    <a href="https://open.spotify.com/intl-es/artist/1LBaiPJNt2OMJQuZJHkLho?si=jVWllmB0StetFIg-1Sh77A" target="_blank"><img src="spotify.png" alt="Spotify"></a>
+    <a href="https://www.youtube.com/@VadeRumba" target="_blank"><img src="youtube.png" alt="YouTube"></a>
+  </div>
+</section>
 
 
 
