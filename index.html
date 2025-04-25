@@ -260,24 +260,25 @@ nav .links {
 
   header {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 44px);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 60px;
+    margin-top: 44px;
   }
 
   header img.bg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: -1;
-    filter: brightness(0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  filter: brightness(0.4);
   }
 
   h1 {
