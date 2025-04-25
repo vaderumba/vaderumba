@@ -9,6 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
+
+.contenido {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
 section h2 {
   margin-top: 0;
   margin-bottom: 20px;
@@ -198,9 +205,10 @@ nav .links {
     width: 100%;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 10px 0;
+    padding: 5px 10px; /* Esto hace la barra más fina */
     gap: 5px; /* Ajustado */
     text-align: center;
+    top: 100%;
   }
 
   nav .links.active {
@@ -250,7 +258,7 @@ nav .links {
 
   section {
     padding: 40px 20px;
-    max-width: 900px;
+    max-width: 100%;
     margin: auto;
  text-align: center;
   }
@@ -258,7 +266,28 @@ section#conciertos {
   max-width: 100%;
   padding: 40px 20px;
   text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
 }
+
+
+section#multimedia {
+  background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
+}
+
+section#miembros {
+  background: linear-gradient(to bottom, #e6e6e6, #dddddd);
+}
+
+section#redes {
+  background: linear-gradient(to bottom, #dddddd, #d4d4d4);
+}
+
+section#contacto {
+  background: linear-gradient(to bottom, #d4d4d4, #cccccc);
+}
+
+
+
 
   @media (max-width: 768px) {
     section {
@@ -507,6 +536,7 @@ header img.bg {
   </section>
 
   <section id="multimedia">
+    <div class="contenido">
     <h2>Multimedia</h2>
     <div class="video">
       <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
@@ -521,12 +551,14 @@ header img.bg {
     </iframe>
   </div>
 </div>
+</div>
 
 
 
   </section>
 
   <section id="miembros">
+   <div class="contenido">
     <h2>Nosotros</h2>
 <p class="bio-nosotros">
  Somos Va de Rumba, cinco colegas con ganas de montar la fiesta allá donde vayamos. Mezclamos rumba y pop-rock para que no puedas quedarte quieto.
@@ -541,9 +573,11 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
       <div class="miembro"><img src="RUBÉN.JPG" alt="Rubén" /><h3>Rubén</h3><p>Percusión</p></div>
       <div class="miembro"><img src="RAFA.JPG" alt="Rafa" /><h3>Rafa</h3><p>Bajo</p></div>
     </div>
+    </div>
   </section>
 
 <section id="redes" class="redes-sociales">
+  <div class="contenido">
   <h2>Síguenos</h2>
   <div class="iconos-redes-mejorado">
     <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red">
@@ -559,9 +593,11 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
       <span>Facebook</span>
     </a>
   </div>
+ </div>
 </section>
 
   <section id="contacto">
+    <div class="contenido">
     <h2>Contacto</h2>
     <form action="https://formspree.io/f/xwpokyjj" method="POST" style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
       <input type="text" name="nombre" placeholder="Tu nombre" required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;">
@@ -570,6 +606,7 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
       <input type="text" name="_gotcha" style="display:none">
       <button type="submit" style="padding: 12px; font-size: 1.4rem; background-color: black; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Anton', sans-serif; transition: background 0.3s ease;">Enviar</button>
     </form>
+   </div>
   </section>
 
   <footer style="background-color: black; color: white; text-align: center; padding: 30px 20px; font-size: 1.2rem;">
