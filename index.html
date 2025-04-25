@@ -12,18 +12,19 @@
 
 .titulo-header {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
 }
 
 .titulo-header h1 {
-  font-size: 8rem;
+  font-size: 3rem;
+  padding: 0 10px;
   color: white;
   text-shadow: 2px 2px 4px black;
   text-transform: uppercase;
@@ -298,21 +299,22 @@ nav .links {
 
 header {
   position: relative;
-  height: calc(100vh - 44px); /* Evita que el título se esconda bajo el nav */
+  height: calc(100vh - 44px); /* 100% menos la barra */
   margin-top: 44px;
   overflow: hidden;
 }
 
   header img.bg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: -1;
-    filter: brightness(0.4);
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  filter: brightness(0.4);
+}
 
   h1 {
     font-size: 8rem;
