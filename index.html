@@ -22,8 +22,12 @@
   align-items: center;
   text-align: center;
   z-index: 2;
+  transition: opacity 0.3s ease;
 }
 
+.titulo-header.inactivo {
+  display: none;
+}
 .titulo-header h1 {
   font-size: 6rem;
   color: white;
@@ -761,25 +765,26 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
 </script>
 
 <script>
-  const tituloGrande = document.querySelector('.titulo-header h1');
-  const contenedorScroll = document.querySelector('.titulo-scroll');
-  const contenedorOriginal = document.querySelector('.titulo-header');
+  const h1 = document.querySelector('.titulo-header h1');
+  const scrollContainer = document.querySelector('.titulo-scroll');
+  const headerContainer = document.querySelector('.titulo-header');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      if (!contenedorScroll.contains(tituloGrande)) {
-        contenedorScroll.appendChild(tituloGrande);
-        contenedorOriginal.classList.add('oculto');
+    const isScrolled = window.scrollY > 100;
+
+    if (isScrolled) {
+      if (!scrollContainer.contains(h1)) {
+        scrollContainer.appendChild(h1);
+        headerContainer.classList.add('inactivo');
       }
     } else {
-      if (!contenedorOriginal.contains(tituloGrande)) {
-        contenedorOriginal.appendChild(tituloGrande);
-        contenedorOriginal.classList.remove('oculto');
+      if (!headerContainer.contains(h1)) {
+        headerContainer.appendChild(h1);
+        headerContainer.classList.remove('inactivo');
       }
     }
   });
 </script>
-
 
 
 </body>
