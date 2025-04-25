@@ -472,7 +472,8 @@ nav .links {
 /* Ajuste en móvil: centrado también */
 @media (max-width: 768px) {
   nav {
-    padding: 3px 10px;
+    padding: 2px 10px;
+    height: 36px; 
     display: flex;
     flex-direction: row;
     justify-content: flex-end; /* 👈 hamburguesa a la derecha */
@@ -490,7 +491,8 @@ nav .links {
 
   nav .menu div {
     width: 25px;
-    height: 3px;
+    height: 2px;           /* 🔧 barras más finas */
+    margin: 3px;           /* 🔧 menos espacio entre barras */
     background-color: white;
     transition: all 0.3s ease;
   }
