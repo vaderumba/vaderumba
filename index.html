@@ -9,50 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
-.titulo-header.oculto {
-  display: none;
-}
-.titulo-header {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-.titulo-header.inactivo {
-  display: none;
-}
-.titulo-header h1 {
-  font-size: 6rem;
-  color: white;
-  text-shadow: 2px 2px 4px black;
-  text-transform: uppercase;
-  font-family: 'Anton', sans-serif;
-  margin: 0;
-  transition: all 0.5s ease;
-}
-
-nav .titulo-scroll {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-nav .titulo-scroll h1 {
-  font-size: 1.5rem;
-  padding-left: 12px;
-  color: white;
-  text-shadow: none;
-  margin: 0;
-  transition: all 0.5s ease;
-}
 
 .contenido {
   max-width: 900px;
@@ -302,24 +258,35 @@ nav .links {
 
 
 
-header {
-  position: relative;
-  height: calc(100vh - 44px); /* altura visible, menos la barra */
-  margin-top: 44px; /* empuja debajo del nav fijo */
-  overflow: hidden;
-}
+  header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+  }
 
-header img.bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
-  filter: brightness(0.4);
-}
+  header img.bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    filter: brightness(0.4);
+  }
 
+  h1 {
+    font-size: 8rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+  }
 
   h2, h3, h4, h5, h6 {
     text-transform: uppercase;
@@ -477,11 +444,6 @@ section#contacto {
       width: 150px;
       height: 150px;
     }
-
-  .titulo-header h1 {
-    font-size: 3.2rem;
-  }
-
   }
 
   .iconos-redes img {
@@ -633,7 +595,6 @@ header img.bg {
     <div></div>
     <div></div>
   </div>
-<div class="titulo-scroll"></div>
   <div class="links">
     <a href="#conciertos">CONCIERTOS</a>
     <a href="#multimedia">MULTIMEDIA</a>
@@ -645,9 +606,7 @@ header img.bg {
 
   <header>
     <img class="bg" src="Grupo.jpg" alt="Foto del grupo Va de Rumba" />
-    <div class="titulo-header">
     <h1>VA DE RUMBA</h1>
-    </div>
   </header>
 
  <a href="#" class="subir" aria-label="Volver arriba">↑</a>
@@ -763,29 +722,6 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
     botonSubir.classList.toggle('mostrar', window.scrollY > 200);
   });
 </script>
-
-<script>
-  const h1 = document.querySelector('.titulo-header h1');
-  const scrollContainer = document.querySelector('.titulo-scroll');
-  const headerContainer = document.querySelector('.titulo-header');
-
-  window.addEventListener('scroll', () => {
-    const isScrolled = window.scrollY > 100;
-
-    if (isScrolled) {
-      if (!scrollContainer.contains(h1)) {
-        scrollContainer.appendChild(h1);
-        headerContainer.classList.add('inactivo');
-      }
-    } else {
-      if (!headerContainer.contains(h1)) {
-        headerContainer.appendChild(h1);
-        headerContainer.classList.remove('inactivo');
-      }
-    }
-  });
-</script>
-
 
 </body>
 </html>
