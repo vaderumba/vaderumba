@@ -196,9 +196,17 @@ nav .links {
     color: #f39c12;
   }
 
- @media (max-width: 768px) {
+
+
+
+ /* --- Estilos generales ya existentes arriba (los puedes dejar igual) --- */
+
+/* --- Ajustes específicos para móviles --- */
+@media (max-width: 768px) {
   nav {
-    padding: 4px 10px;
+    padding: 4px 10px; /* barra más fina */
+    margin: 0;
+    line-height: 1;
     height: auto;
   }
 
@@ -207,23 +215,30 @@ nav .links {
   }
 
   nav .links {
-    display: none;
-    flex-direction: column;
     position: absolute;
     top: 100%; /* 👈 pega el menú justo debajo del nav */
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.95);
-    padding: 10px 0;
-    gap: 10px;
+    padding: 0; /* sin separación extra */
+    gap: 15px;
     text-align: center;
     z-index: 9;
+    display: none;
+    flex-direction: column;
   }
 
   nav .links.active {
     display: flex;
   }
+
+  nav .menu div {
+    margin: 3px; /* opcional: menos espacio entre rayitas del botón */
+  }
 }
+
+
+
 
   header {
     position: relative;
