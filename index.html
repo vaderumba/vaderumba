@@ -471,38 +471,44 @@ nav .links {
 
 /* Ajuste en móvil: centrado también */
 @media (max-width: 768px) {
-  nav .links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
+  nav {
+    padding: 4px 10px;
+    display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 10px 0;
-    gap: 5px;
-    text-align: center;
-  }
-
-  nav .links.active {
-     display: flex;
-  animation: slideFadeIn 0.3s ease forwards;
+    align-items: center;
   }
 
   nav .menu {
     display: flex;
+    margin-bottom: 5px;
+  }
+
+  nav .links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    gap: 15px;
+    text-align: center;
+    padding: 10px 0;
+    animation: slideFadeIn 0.3s ease forwards;
+  }
+
+  nav .links.active {
+    display: flex;
+  }
+
+  @keyframes slideFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
-
-@keyframes pan {
-  0% {
-    transform: scale(1.1) translateX(0);
-  }
-  100% {
-    transform: scale(1.1) translateX(-2%);
-  }
-}
-
 header img.bg {
   animation: pan 30s ease-in-out infinite alternate;
 }
