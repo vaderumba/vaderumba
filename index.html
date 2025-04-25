@@ -474,13 +474,37 @@ nav .links {
   nav {
     padding: 4px 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-end; /* 👈 hamburguesa a la derecha */
     align-items: center;
   }
 
   nav .menu {
     display: flex;
-    margin-bottom: 5px;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    margin-right: 10px; /* 👈 margen derecho para respirar */
+    z-index: 11; /* encima del menú desplegable */
+  }
+
+  nav .menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  nav .menu.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  nav .menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  nav .menu.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
   nav .links {
