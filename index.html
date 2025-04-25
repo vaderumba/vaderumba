@@ -9,6 +9,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
+
+.titulo-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 1;
+}
+
 .titulo-header h1 {
   font-size: 8rem;
   color: white;
@@ -27,7 +40,12 @@ nav .titulo-scroll h1 {
   transition: all 0.5s ease;
 }
 
-
+nav .titulo-scroll {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 
 .contenido {
@@ -278,16 +296,12 @@ nav .links {
 
 
 
-  header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 60px;
-  }
+header {
+  position: relative;
+  height: calc(100vh - 44px); /* Evita que el título se esconda bajo el nav */
+  margin-top: 44px;
+  overflow: hidden;
+}
 
   header img.bg {
     position: absolute;
