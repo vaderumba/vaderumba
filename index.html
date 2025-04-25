@@ -197,24 +197,30 @@ nav .links {
   }
 
  @media (max-width: 768px) {
-  nav .links {
-    top: 100px;
-    display: none;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 3px 10px; /* Esto hace la barra más fina */
-    gap: 3px; /* Ajustado */
-    text-align: center;
-  }
-
-  nav .links.active {
-    display: flex;
+  nav {
+    padding: 4px 10px;
+    height: auto;
   }
 
   nav .menu {
+    display: flex;
+  }
+
+  nav .links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* 👈 pega el menú justo debajo del nav */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 10px 0;
+    gap: 10px;
+    text-align: center;
+    z-index: 9;
+  }
+
+  nav .links.active {
     display: flex;
   }
 }
