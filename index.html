@@ -9,6 +9,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
+.titulo-header h1 {
+  font-size: 8rem;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  text-transform: uppercase;
+  font-family: 'Anton', sans-serif;
+  transition: all 0.5s ease;
+}
+
+nav .titulo-scroll h1 {
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+  padding: 0 10px;
+  text-shadow: none;
+  transition: all 0.5s ease;
+}
+
+
+
 
 .contenido {
   max-width: 900px;
@@ -595,6 +615,7 @@ header img.bg {
     <div></div>
     <div></div>
   </div>
+<div class="titulo-scroll"></div>
   <div class="links">
     <a href="#conciertos">CONCIERTOS</a>
     <a href="#multimedia">MULTIMEDIA</a>
@@ -606,7 +627,9 @@ header img.bg {
 
   <header>
     <img class="bg" src="Grupo.jpg" alt="Foto del grupo Va de Rumba" />
+    <div class="titulo-header">
     <h1>VA DE RUMBA</h1>
+    </div>
   </header>
 
  <a href="#" class="subir" aria-label="Volver arriba">↑</a>
@@ -722,6 +745,29 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
     botonSubir.classList.toggle('mostrar', window.scrollY > 200);
   });
 </script>
+
+
+<script>
+  const tituloGrande = document.querySelector('.titulo-header h1');
+  const contenedorScroll = document.querySelector('.titulo-scroll');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      if (!contenedorScroll.contains(tituloGrande)) {
+        contenedorScroll.appendChild(tituloGrande);
+      }
+    } else {
+      const originalContainer = document.querySelector('.titulo-header');
+      if (!originalContainer.contains(tituloGrande)) {
+        originalContainer.appendChild(tituloGrande);
+      }
+    }
+  });
+</script>
+
+
+
+
 
 </body>
 </html>
