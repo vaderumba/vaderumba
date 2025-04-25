@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
-
+.titulo-header.oculto {
+  display: none;
+}
 .titulo-header {
   width: 100%;
   position: absolute;
@@ -767,15 +769,16 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
     if (window.scrollY > 100) {
       if (!contenedorScroll.contains(tituloGrande)) {
         contenedorScroll.appendChild(tituloGrande);
+        contenedorOriginal.classList.add('oculto');
       }
     } else {
       if (!contenedorOriginal.contains(tituloGrande)) {
         contenedorOriginal.appendChild(tituloGrande);
+        contenedorOriginal.classList.remove('oculto');
       }
     }
   });
 </script>
-
 
 
 
