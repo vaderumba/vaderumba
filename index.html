@@ -693,6 +693,29 @@ header img.bg {
   font-family: 'Bebas Neue', sans-serif;
 }
 
+@media (max-width: 768px) {
+  .tarjeta-red {
+    width: 90px;
+    height: 90px;
+  }
+
+  .tarjeta-red img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .tarjeta-red span {
+    font-size: 0.75rem;
+  }
+
+  .iconos-redes-mejorado {
+    gap: 15px; /* reduce el espacio entre iconos */
+    flex-wrap: nowrap; /* fuerza que estén en una sola línea */
+    overflow-x: auto;  /* permite scroll horizontal si no caben del todo */
+  }
+}
+
+
 </style>
   <script>
     window.addEventListener('scroll', () => {
