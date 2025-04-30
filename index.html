@@ -333,16 +333,15 @@ nav .links {
 
 
   header {
-  position: relative;
-  min-height: 100vh; /* mantiene altura de pantalla completa */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  padding: 60px 20px 20px 20px; /* espacio para el nav */
-}
-
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+  }
 
   header img.bg {
     position: absolute;
@@ -840,26 +839,6 @@ header img.bg {
     justify-self: center;
   }
 }
-.video-responsive {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* Relación de aspecto 16:9 */
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  margin-bottom: 30px;
-}
-
-.video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  object-fit: cover; /* Simula el comportamiento de 'cover' */
-}
-
 
 
 
@@ -934,13 +913,10 @@ header img.bg {
   <section id="multimedia">
     <div class="contenido">
     <h2>Multimedia</h2>
-    <div class="video-responsive">
-  <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
-</div>
-
-<div class="video-responsive">
-  <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen></iframe>
-</div>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen></iframe>
+    </div>
 <div class="spotify-card">
   <div class="spotify-clip">
     <iframe
