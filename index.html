@@ -840,6 +840,28 @@ header img.bg {
   }
 }
 
+@media (max-width: 768px) {
+  #contacto {
+    background: url('fondocontacto.png') no-repeat center center;
+    background-size: cover;
+    color: white; /* opcional: mejora contraste del texto */
+    position: relative;
+    z-index: 1;
+  }
+
+  #contacto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* oscurece el fondo para legibilidad */
+    z-index: -1;
+  }
+
+  #contacto .contenido {
+    position: relative;
+    z-index: 2;
+  }
+}
 
 
 
