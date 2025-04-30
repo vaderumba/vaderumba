@@ -476,7 +476,7 @@ nav .links {
     height: 36px; 
     display: flex;
     flex-direction: row;
-    justify-content: flex-end; /* 👈 hamburguesa a la derecha */
+    justify-content: flex-start; /* ✅ Ahora la hamburguesa va a la izquierda */
     align-items: center;
   }
 
@@ -485,8 +485,7 @@ nav .links {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
-    margin-right: 20px; /* 👈 margen derecho para respirar */
-    z-index: 11; /* encima del menú desplegable */
+    z-index: 11;
   }
 
   nav .menu div {
