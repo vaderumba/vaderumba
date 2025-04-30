@@ -838,21 +838,21 @@ header img.bg {
 }
 @media (max-width: 768px) {
   #contacto {
-    background-image: url('fondocontacto.png');
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: url('fondocontacto.png') no-repeat center center;
     background-size: cover;
-    position: relative;
+    background-attachment: scroll;
     color: white;
-    z-index: 0;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh; /* 👈 fuerza a ocupar altura completa de pantalla */
   }
 
   #contacto::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* oscurece para que se lea bien */
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
   }
 
   #contacto .contenido {
@@ -860,6 +860,7 @@ header img.bg {
     z-index: 1;
   }
 }
+
 
 
 
