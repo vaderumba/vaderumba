@@ -946,6 +946,15 @@ window.addEventListener('scroll', () => {
     headerTitle.style.opacity = '1'; // Vuelve a mostrar h1
     navTitle.classList.remove('visible'); // Oculta texto del nav
   }
+
+});
+document.querySelectorAll('nav .links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      links.classList.remove('active');
+      menuBtn.classList.remove('active'); // cerrar animación también
+    }
+  });
 });
 </script>
 
