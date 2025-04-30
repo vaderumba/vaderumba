@@ -333,15 +333,16 @@ nav .links {
 
 
   header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 60px;
-  }
+  position: relative;
+  min-height: 100vh; /* mantiene altura de pantalla completa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 60px 20px 20px 20px; /* espacio para el nav */
+}
+
 
   header img.bg {
     position: absolute;
@@ -845,7 +846,6 @@ header img.bg {
   height: 0;
   overflow: hidden;
   border-radius: 12px; /* opcional */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   margin-bottom: 30px;
 }
 
