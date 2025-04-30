@@ -6,313 +6,32 @@
   <title>Va de Rumba</title>
   <link rel="icon" href="favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <style>
 
-
-.contenido {
-  max-width: 900px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-section h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-section ul {
-  margin-bottom: 0;
-}
-
-
-.bio-nosotros {
-  font-size: 1.4rem;
+    body {
+  margin: 0;
   font-family: 'Bebas Neue', sans-serif;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-  line-height: 1.6;
-  text-align: center;
-  color: #333;
-}
-
-
-
-.iconos-redes-mejorado {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 20px;
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.tarjeta-red {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-}
-
-.tarjeta-red:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-
-.tarjeta-red img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
-}
-
-.tarjeta-red:hover img {
-  transform: scale(1.1);
-}
-
-.tarjeta-red span {
-  font-family: 'Anton', sans-serif;
-  color: #111;
-  font-size: 1.1rem;
-  margin-top: 5px;
-}
-
-
-.spotify-card {
-  width: 100%;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.spotify-clip {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  height: 360px; /* puedes ajustar si lo ves corto/largo */
-}
-
-.spotify-clip iframe {
-  width: 100%;
-  height: 380px;
-  border: none;
-  margin-top: -10px; /* 👈 TRUCO: sube el contenido 10px para ocultar esa franja negra */
-  display: block;
-}
-
-
-
-html {
   scroll-behavior: smooth;
-}
-
-.subir {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.subir.mostrar {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.iconos-redes a {
-  font-size: 2.5rem;
-  color: #111;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.iconos-redes a:hover {
-  transform: scale(1.2);
-  color: #f39c12;
+  animation: fadeIn 1s ease;
 }
 
 
-  body {
-    margin: 0;
-    font-family: 'Bebas Neue', sans-serif;
-    scroll-behavior: smooth;
-    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
-    animation: fadeIn 1s ease;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  nav .menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  nav .menu div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px;
-  }
-
-nav .links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
-}
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-family: 'Anton', sans-serif;
-  }
-
-  nav a:hover {
-    color: #f39c12;
-  }
-
-
-
-
- /* --- Estilos generales ya existentes arriba (los puedes dejar igual) --- */
-
-/* --- Ajustes específicos para móviles --- */
- nav {
-    padding: 4px 10px;
-    margin: 0;
-    line-height: 1;
-    height: 44px; /* 👈 define altura exacta */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
-
-  nav .menu {
-    display: flex;
-  }
-
-  nav .links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 20px; /* 👈 ahora sí: menú pegado sin hueco */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 0;
-    gap: 15px;
-    text-align: center;
-    z-index: 9;
-    animation: slideFadeIn 0.3s ease forwards;
-  }
-
-  nav .links.active {
-    display: flex;
-  }
-
-  nav .menu div {
-    margin: 2px; /* opcional: menos espacio entre rayitas del botón */
-  }
-  @keyframes slideFadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-}
 
 
-
-
-
-
-  header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 60px;
-  }
-
-  header img.bg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: -1;
-    filter: brightness(0.4);
-  }
-
-  h1 {
-    font-size: 8rem;
-    color: white;
-    text-shadow: 2px 2px 4px black;
-    text-transform: uppercase;
-    font-family: 'Anton', sans-serif;
-  }
-
-  h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-family: 'Anton', sans-serif;
-  }
-
-  section {
-    padding: 20px 10px;
-    max-width: 100%;
-    margin: auto;
- text-align: center;
-  }
 section#conciertos {
-  max-width: 100%;
-  padding: 40px 20px;
-  text-align: center;
   background: linear-gradient(to bottom, #ffffff, #f0f0f0);
 }
-
 
 section#multimedia {
   background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
 }
 
-section#miembros {
+section#nosotros {
   background: linear-gradient(to bottom, #e6e6e6, #dddddd);
 }
 
@@ -326,294 +45,222 @@ section#contacto {
 
 
 
-
-  @media (max-width: 768px) {
-    section {
-      padding: 30px 15px;
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
     }
-  }
 
-  .redes-iconos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 3rem;
-    margin-top: 30px;
-    flex-wrap: wrap;
-  }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
 
-  .redes-iconos a {
-    color: #111;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
+    nav a:hover {
+      color: #f39c12;
+    }
 
-  .redes-iconos a:hover {
-    transform: scale(1.2);
-  }
-
-  .subir {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(0,0,0,0.3);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    z-index: 20;
-    display: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .subir.mostrar {
-    display: block;
-  }
-
-  .subir:hover {
-    transform: scale(1.1);
-  }
-
-  iframe {
-    width: 100%;
-    height: 315px;
-    margin-top: 20px;
-  }
-
-  .miembros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .miembro {
-    text-align: center;
-  }
-
-  .miembro img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-
-  .miembro h3 {
-       font-size: 1.6rem;
-       margin: 10px 0 4px 0;
-  }
-
-  .miembro p {
-    font-size: 1rem;
-    margin: 0; /* sin margen extra */
-  }
-
-  @media (max-width: 768px) {
     header {
-      height: auto;
-      padding-top: 80px;
-      padding-bottom: 40px;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
     }
 
     header img.bg {
-      height: auto;
-      max-height: 80vh;
-      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.4);
+      z-index: -1;
     }
 
-    h1 {
-      font-size: 3rem;
-      padding: 20px;
+    #titulo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 8rem;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+      margin: 0;
+      transition: all 0.4s ease;
+      z-index: 5;
+      text-transform: uppercase;
+      font-family: 'Anton', sans-serif;
     }
 
-    h2 {
-      font-size: 3rem;
-    }
-
-    .redes-iconos {
-      font-size: 2rem;
-      gap: 15px;
-    }
-
-    .miembro img {
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  .iconos-redes img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .iconos-redes a:hover img {
-    transform: scale(1.2);
-    filter: brightness(1.2);
-  }
-
-/* Centrar títulos */
-h1, h2, h3, h4, h5, h6 {
+ #titulo.reducido {
+  position: fixed;
+  top: -0.7%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.85);
+  font-size: 2.5rem;
   text-align: center;
-}
-
-/* Centrar texto de los enlaces del menú */
-nav .links {
-  justify-content: center;
-  text-align: center;
-}
-
-/* Ajuste en móvil: centrado también */
-@media (max-width: 768px) {
-  nav {
-    padding: 2px 10px;
-    height: 36px; 
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end; /* 👈 hamburguesa a la derecha */
-    align-items: center;
-  }
-
-  nav .menu {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 4px;
-    margin-right: 20px; /* 👈 margen derecho para respirar */
-    z-index: 11; /* encima del menú desplegable */
-  }
-
-  nav .menu div {
-    width: 25px;
-        height: 2px;           /* 🔧 barras más finas */
-    margin: 3px;           /* 🔧 menos espacio entre barras */
-    background-color: white;
-    transition: all 0.3s ease;
-  }
-
-  nav .menu.active div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  nav .menu.active div:nth-child(2) {
-    opacity: 0;
-  }
-
-  nav .menu.active div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  nav .links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 44px;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* semi-transparente como la barra */
-  padding: 20px 0; /* más altura vertical */
-  gap: 20px; /* más separación entre los enlaces */
-  text-align: center;
-  z-index: 9;
-  animation: slideFadeIn 0.3s ease forwards;
-}
-
-nav .links a {
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-nav .links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-
-  nav .links.active {
-    display: flex;
-  }
-
-  @keyframes slideFadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-header img.bg {
-  animation: pan 30s ease-in-out infinite alternate;
-}
-
-/* Animación del botón hamburguesa a X */
-.menu div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px;
+  background: transparent;
+  pointer-events: none;
+  opacity: 0.95;
+  z-index: 2000;
   transition: all 0.4s ease;
 }
 
-.menu.active div:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+iframe[src*="youtube"] {
+  width: 100%;
+  max-width: 100%;
+  height: 315px;
+  border: none;
+  margin: 20px 0;
+  display: block;
 }
 
-.menu.active div:nth-child(2) {
-  opacity: 0;
+#multimedia .contenido {
+  padding: 0 20px;
 }
 
-.menu.active div:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+#nosotros .bio-nosotros {
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 
-</style>
-  <script>
-    window.addEventListener('scroll', () => {
-      const subir = document.querySelector('.subir');
-      if (window.scrollY > 200) {
-        subir.classList.add('mostrar');
-      } else {
-        subir.classList.remove('mostrar');
-      }
-    });
-  </script>
+    section {
+      padding: 20px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .contenido {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .bio-nosotros {
+      font-size: 1.4rem;
+      font-family: 'Bebas Neue', sans-serif;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+      text-align: center;
+      color: #333;
+    }
+
+    .miembros {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .miembro img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .miembro h3 {
+      font-size: 1.5rem;
+      margin: 10px 0 5px;
+      text-transform: uppercase;
+    }
+
+    .tarjeta-red img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .tarjeta-red span {
+      font-family: 'Anton', sans-serif;
+    }
+
+    .iconos-redes-mejorado {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+
+    .tarjeta-red {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .tarjeta-red:hover {
+      transform: scale(1.05);
+    }
+
+    .spotify-card {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .spotify-clip iframe {
+      width: 100%;
+      height: 380px;
+      border: none;
+      margin-top: -10px;
+      display: block;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
   <nav>
-  <div class="menu" aria-label="Menú de navegación">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="links">
-    <a href="#conciertos">CONCIERTOS</a>
-    <a href="#multimedia">MULTIMEDIA</a>
-    <a href="#miembros">NOSOTROS</a>
-    <a href="#redes">REDES SOCIALES</a>
-    <a href="#contacto">CONTACTO</a>
-  </div>
-</nav>
+    <a href="#conciertos">Conciertos</a>
+    <a href="#multimedia">Multimedia</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
   <header>
-    <img class="bg" src="Grupo.jpg" alt="Foto del grupo Va de Rumba" />
-    <h1>VA DE RUMBA</h1>
+    <img class="bg" src="Grupo.jpg" alt="Fondo del grupo">
+    <h1 id="titulo">VA DE RUMBA</h1>
   </header>
-
- <a href="#" class="subir" aria-label="Volver arriba">↑</a>
 
   <section id="conciertos">
     <h2>Próximos conciertos</h2>
-    <ul style="font-size: 1.5rem; list-style: none; padding: 0;">
+    <ul style="font-size: 1.6rem; list-style: none; padding: 0;">
       <li>📍 <strong>4 Mayo</strong> — Destino Puerto Valencia, 17:00h</li>
       <li>📍 <strong>10 Mayo</strong> — La Torreta 1888, Torrent, 18:00h</li>
       <li>📍 <strong>15 Junio</strong> — Destino Puerto Valencia, 17:00h</li>
@@ -623,105 +270,79 @@ header img.bg {
 
   <section id="multimedia">
     <div class="contenido">
-    <h2>Multimedia</h2>
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen></iframe>
-    </div>
-<div class="spotify-card">
-  <div class="spotify-clip">
-    <iframe
-      src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy">
-    </iframe>
-  </div>
-</div>
-</div>
-
-
-
-  </section>
-
-  <section id="miembros">
-   <div class="contenido">
-    <h2>Nosotros</h2>
-<p class="bio-nosotros">
- Somos Va de Rumba, cinco colegas con ganas de montar la fiesta allá donde vayamos. Mezclamos rumba y pop-rock para que no puedas quedarte quieto.
-En el grupo estamos Toni, Alejandro y Jose dándole a la voz, Rubén marcando el ritmo en la percusión y Rafa metiendo caña con el bajo. Hacemos música para disfrutar, cantar a gritos y pasarlo en grande.
-Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de rumba con nosotros!
-</p>
-
-    <div class="miembros">
-      <div class="miembro"><img src="TONI.JPG" alt="Toni" /><h3>Toni</h3><p>Voz y guitarra</p></div>
-      <div class="miembro"><img src="ALEJANDRO.JPG" alt="Alejandro" /><h3>Alejandro</h3><p>Voz</p></div>
-      <div class="miembro"><img src="JOSE.JPG" alt="Jose" /><h3>Jose</h3><p>Voz</p></div>
-      <div class="miembro"><img src="RUBÉN.JPG" alt="Rubén" /><h3>Rubén</h3><p>Percusión</p></div>
-      <div class="miembro"><img src="RAFA.JPG" alt="Rafa" /><h3>Rafa</h3><p>Bajo</p></div>
-    </div>
+      <h2>Multimedia</h2>
+      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo" allowfullscreen></iframe>
+      <div class="spotify-card">
+        <div class="spotify-clip">
+          <iframe src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
-<section id="redes" class="redes-sociales">
-  <div class="contenido">
-  <h2>Síguenos</h2>
-  <div class="iconos-redes-mejorado">
-    <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red">
-      <img src="instagram.png" alt="Instagram">
-      <span>Instagram</span>
-    </a>
-    <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank" class="tarjeta-red">
-      <img src="tiktok.png" alt="TikTok">
-      <span>TikTok</span>
-    </a>
-    <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank" class="tarjeta-red">
-      <img src="facebook.png" alt="Facebook">
-      <span>Facebook</span>
-    </a>
-  </div>
- </div>
-</section>
+  <section id="nosotros">
+    <div class="contenido">
+      <h2>Nosotros</h2>
+      <p class="bio-nosotros">
+        Somos Va de Rumba, cinco colegas con ganas de montar la fiesta allá donde vayamos. Mezclamos rumba y pop-rock para que no puedas quedarte quieto. En el grupo estamos Toni, Alejandro y Jose dándole a la voz, Rubén marcando el ritmo en la percusión y Rafa metiendo caña con el bajo. Hacemos música para disfrutar, cantar a gritos y pasarlo en grande. Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de rumba con nosotros!
+      </p>
+      <div class="miembros">
+        <div class="miembro"><img src="TONI.JPG" alt="Toni"><h3>Toni</h3><p>Voz y guitarra</p></div>
+        <div class="miembro"><img src="ALEJANDRO.JPG" alt="Alejandro"><h3>Alejandro</h3><p>Voz</p></div>
+        <div class="miembro"><img src="JOSE.JPG" alt="Jose"><h3>Jose</h3><p>Voz</p></div>
+        <div class="miembro"><img src="RUBÉN.JPG" alt="Rubén"><h3>Rubén</h3><p>Percusión</p></div>
+        <div class="miembro"><img src="RAFA.JPG" alt="Rafa"><h3>Rafa</h3><p>Bajo</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="redes">
+    <div class="contenido">
+      <h2>Síguenos</h2>
+      <div class="iconos-redes-mejorado">
+        <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red">
+          <img src="instagram.png" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank" class="tarjeta-red">
+          <img src="tiktok.png" alt="TikTok">
+          <span>TikTok</span>
+        </a>
+        <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank" class="tarjeta-red">
+          <img src="facebook.png" alt="Facebook">
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section id="contacto">
     <div class="contenido">
-    <h2>Contacto</h2>
-    <form action="https://formspree.io/f/xwpokyjj" method="POST" style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
-      <input type="text" name="nombre" placeholder="Tu nombre" required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;">
-      <input type="email" name="email" placeholder="Tu email" required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;">
-      <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje..." required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;"></textarea>
-      <input type="text" name="_gotcha" style="display:none">
-      <button type="submit" style="padding: 12px; font-size: 1.4rem; background-color: black; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Anton', sans-serif; transition: background 0.3s ease;">Enviar</button>
-    </form>
-   </div>
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/xwpokyjj" method="POST" style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+        <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje..." required></textarea>
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit" style="padding: 12px; font-size: 1.2rem; background-color: black; color: white; border: none; cursor: pointer; text-transform: uppercase;">Enviar</button>
+      </form>
+    </div>
   </section>
 
-  <footer style="background-color: black; color: white; text-align: center; padding: 30px 20px; font-size: 1.2rem;">
-    <p style="margin: 0;">&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
+  <footer>
+    &copy; 2025 Va de Rumba. Todos los derechos reservados.
   </footer>
 
-<script>
-  const menuBtn = document.querySelector('.menu');
-  const links = document.querySelector('.links');
-
-  menuBtn.addEventListener('click', () => {
-    links.classList.toggle('active');
-    menuBtn.classList.toggle('active'); // animación del botón
-  });
-
-  document.querySelectorAll('nav .links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        links.classList.remove('active');
-        menuBtn.classList.remove('active'); // cerrar animación también
+  <script>
+    const titulo = document.getElementById('titulo');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        titulo.classList.add('reducido');
+      } else {
+        titulo.classList.remove('reducido');
       }
     });
-  });
-
-  const botonSubir = document.querySelector('.subir');
-  window.addEventListener('scroll', () => {
-    botonSubir.classList.toggle('mostrar', window.scrollY > 200);
-  });
-</script>
-
+  </script>
 </body>
 </html>
