@@ -666,13 +666,29 @@ header img.bg {
 }
 
 #conciertos ul {
-  text-align: justify;
-  font-size: 6px; /* 👈 Reduce el tamaño (ajustable) */
+  text-align: center;
+  font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto;
+  list-style: none;
+  padding: 0;
   line-height: 1.6;
 }
 
+.evento {
+  margin-bottom: 25px;
+}
+
+.evento .dia {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+}
+
+.evento .detalle {
+  font-size: 1.2rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
 
 </style>
   <script>
@@ -713,10 +729,31 @@ header img.bg {
   <section id="conciertos">
     <h2>Conciertos</h2>
     <ul style="font-size: 1.5rem; list-style: none; padding: 0;">
-      <li>📍 <strong>4 Mayo</strong> — Destino Puerto, Valencia, 17:00h</li>
-      <li>📍 <strong>10 Mayo</strong> — La Torreta 1888, Torrent, 18:00h</li>
-      <li>📍 <strong>15 Junio</strong> — Destino Puerto, Valencia, 17:00h</li>
-      <li>📍 <strong>5 Julio</strong> — La Torreta 1888, Torrent, 18:00h</li>
+      <li>
+  <div class="evento">
+    <div class="dia">4 Mayo</div>
+    <div class="detalle">📍Destino Puerto, Valencia — 17:00h</div>
+  </div>
+</li>
+<li>
+  <div class="evento">
+    <div class="dia">10 Mayo</div>
+    <div class="detalle">📍La Torreta 1888 — 17:00h</div>
+  </div>
+</li>
+      <li>
+  <div class="evento">
+    <div class="dia">15 Junio</div>
+    <div class="detalle">📍Destino Puerto, Valencia — 17:00h</div>
+  </div>
+</li>
+<li>
+  <div class="evento">
+    <div class="dia">5 Julio</div>
+    <div class="detalle">📍La Torreta 1888 — 17:00h</div>
+  </div>
+</li>
+
     </ul>
   </section>
 
