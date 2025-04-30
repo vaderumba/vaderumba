@@ -807,22 +807,22 @@ header img.bg {
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .miembros {
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
   }
 
   .miembro {
-    width: 45%;         /* 🧩 cada miembro ocupa el 45% */
-    max-width: 300px;
+    width: 45% !important;
+    max-width: 100%;
     box-sizing: border-box;
-    margin-bottom: 30px;
+    text-align: center;
   }
 
   .miembro img {
-    width: 180px;
-    height: 180px;
+    width: 180px !important;
+    height: 180px !important;
   }
 
   .miembro h3 {
