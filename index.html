@@ -15,12 +15,14 @@
   font-size: 1.6rem;
   color: white;
   text-align: right;
+  position: absolute;
+  right: 10px; /* 👉 margen opcional desde el borde derecho */
+  top: 50%;
+  transform: translateY(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
-  margin-left: auto; /* 👉 empuja hacia la derecha */
-  padding-right: 4px; /* 👉 opcional: espacio desde el borde */
+  z-index: 11;
 }
-
 @media (max-width: 768px) {
   .titulo-navbar {
     display: flex;
