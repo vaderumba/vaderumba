@@ -18,14 +18,17 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   margin-left: auto; /* 👉 empuja hacia la derecha */
-  padding-right: 2px; /* 👉 opcional: espacio desde el borde */
+  padding-right: 4px; /* 👉 opcional: espacio desde el borde */
 }
 
 @media (max-width: 768px) {
   .titulo-navbar {
     display: flex;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    padding-right: 10px;
   }
 
   .titulo-navbar.visible {
