@@ -805,24 +805,20 @@ header img.bg {
     padding-top: 30px;
   }
 }
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .miembros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
     gap: 30px;
+    padding: 20px;
   }
 
   .miembro {
-    flex: 0 1 calc(50% - 30px); /* dos por fila con espacio */
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 300px;
     text-align: center;
-  }
-
-  /* 👉 Centra el último si hay número impar */
-  .miembro:nth-last-child(1):nth-child(odd) {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .miembro img {
@@ -831,11 +827,16 @@ header img.bg {
   }
 
   .miembro h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .miembro p {
     font-size: 1.1rem;
+  }
+
+  /* Centrar el último cuando hay número impar */
+  .miembros:has(.miembro:nth-child(5):last-child) {
+    grid-template-columns: 1fr;
   }
 }
 
