@@ -932,31 +932,40 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
     });
   });
 
-  const botonSubir = document.querySelector('.subir');
-const headerTitle = document.querySelector('header h1');
-const navTitle = document.querySelector('.titulo-navbar');
+  // 🔽 ESTE BLOQUE ES NUEVO
+  document.addEventListener('click', (event) => {
+    const isClickInsideMenu = menuBtn.contains(event.target);
+    const isClickInsideLinks = links.contains(event.target);
 
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-
-  if (scrollY > 100 && window.innerWidth <= 768) {
-    headerTitle.style.opacity = '0'; // Oculta el h1
-    navTitle.classList.add('visible'); // Muestra "VA DE RUMBA" en nav
-  } else {
-    headerTitle.style.opacity = '1'; // Vuelve a mostrar h1
-    navTitle.classList.remove('visible'); // Oculta texto del nav
-  }
-
-});
-document.querySelectorAll('nav .links a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
+    if (!isClickInsideMenu && !isClickInsideLinks && window.innerWidth <= 768) {
       links.classList.remove('active');
-      menuBtn.classList.remove('active'); // cerrar animación también
+      menuBtn.classList.remove('active');
     }
   });
-});
+
+  const botonSubir = document.querySelector('.subir');
+  const headerTitle = document.querySelector('header h1');
+  const navTitle = document.querySelector('.titulo-navbar');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 200) {
+      botonSubir.classList.add('mostrar');
+    } else {
+      botonSubir.classList.remove('mostrar');
+    }
+
+    if (scrollY > 100 && window.innerWidth <= 768) {
+      headerTitle.style.opacity = '0'; // Oculta el h1
+      navTitle.classList.add('visible'); // Muestra "VA DE RUMBA" en nav
+    } else {
+      headerTitle.style.opacity = '1'; // Vuelve a mostrar h1
+      navTitle.classList.remove('visible'); // Oculta texto del nav
+    }
+  });
 </script>
+
 
 </body>
 </html>
