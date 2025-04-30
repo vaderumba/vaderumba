@@ -807,22 +807,27 @@ header img.bg {
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .miembros {
-    display: flex !important;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
   }
 
   .miembro {
-    width: 45% !important;
-    max-width: 100%;
+    flex: 0 1 calc(50% - 30px); /* dos por fila con espacio */
     box-sizing: border-box;
     text-align: center;
   }
 
+  /* 👉 Centra el último si hay número impar */
+  .miembro:nth-last-child(1):nth-child(odd) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .miembro img {
-    width: 180px !important;
-    height: 180px !important;
+    width: 180px;
+    height: 180px;
   }
 
   .miembro h3 {
@@ -831,35 +836,6 @@ header img.bg {
 
   .miembro p {
     font-size: 1.1rem;
-  }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .miembros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row !important;
-    gap: 30px;
-  }
-
-  .miembro {
-    width: 45% !important;
-    max-width: 320px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .miembro img {
-    width: 180px !important;
-    height: 180px !important;
-  }
-
-  .miembro h3 {
-    font-size: 1.6rem;
-  }
-
-  .miembro p {
-    font-size: 1rem;
   }
 }
 
