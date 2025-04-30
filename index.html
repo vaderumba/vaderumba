@@ -88,6 +88,44 @@ section ul {
   text-decoration: none;
   overflow: hidden; /* evita que el contenido sobresalga del círculo */
 }
+.tarjeta-red {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.tarjeta-red.instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b); /* rosa-naranja IG */
+  color: white;
+}
+
+.tarjeta-red.tiktok {
+  background: linear-gradient(135deg, #ff0050, #8f00ff); /* rosa y violeta TikTok */
+  color: white;
+}
+
+.tarjeta-red.facebook {
+  background-color: #3b5998; /* azul Facebook */
+  color: white;
+}
+
+.tarjeta-red span {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  color: inherit;
+}
+
+.tarjeta-red img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 6px;
+  filter: brightness(0) invert(1); /* hace que el logo se vea blanco sin cambiar la imagen */
+}
+
 
 .tarjeta-red:hover {
   transform: translateY(-5px) scale(1.03);
@@ -715,18 +753,21 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
   <div class="contenido">
   <h2>Síguenos</h2>
   <div class="iconos-redes-mejorado">
-    <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red">
-      <img src="instagram.png" alt="Instagram">
-      <span>Instagram</span>
-    </a>
-    <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank" class="tarjeta-red">
-      <img src="tiktok.png" alt="TikTok">
-      <span>TikTok</span>
-    </a>
-    <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank" class="tarjeta-red">
-      <img src="facebook.png" alt="Facebook">
-      <span>Facebook</span>
-    </a>
+   <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red instagram">
+  <img src="instagram.png" alt="Instagram">
+  <span>Instagram</span>
+</a>
+
+<a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank" class="tarjeta-red tiktok">
+  <img src="tiktok.png" alt="TikTok">
+  <span>TikTok</span>
+</a>
+
+<a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank" class="tarjeta-red facebook">
+  <img src="facebook.png" alt="Facebook">
+  <span>Facebook</span>
+</a>
+
   </div>
  </div>
 </section>
