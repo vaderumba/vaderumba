@@ -402,20 +402,6 @@ section#contacto {
 
 
   @media (max-width: 768px) {
-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%; /* puedes ajustar el tamaño del degradado */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
-  pointer-events: none;
-  z-index: 0;
-}
-
-
-
     section {
       padding: 30px 15px;
     }
@@ -519,6 +505,19 @@ header::after {
       padding: 20px;
     }
 
+
+  header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+    pointer-events: none;
+    z-index: 0;
+  }
+
     h2 {
       font-size: 3rem;
     }
@@ -532,6 +531,8 @@ header::after {
       width: 150px;
       height: 150px;
     }
+
+
   }
 
   .iconos-redes img {
