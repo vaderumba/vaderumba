@@ -10,14 +10,16 @@
   <style>
 
 .titulo-navbar {
-  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Anton', sans-serif;
   font-size: 1.6rem;
   color: white;
   text-align: center;
-  flex: 1;                 /* ✅ hace que crezca y ocupe el espacio entre la hamburguesa y los enlaces */
-  justify-content: center; /* ✅ centra el contenido horizontalmente */
-  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
