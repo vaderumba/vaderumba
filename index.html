@@ -842,8 +842,9 @@ header img.bg {
 
 @media (max-width: 768px) {
   #contacto {
-    background: url('fondocontacto') no-repeat center center;
+    background: url('fondocontacto.png') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
     color: white;
     position: relative;
     z-index: 1;
@@ -853,7 +854,7 @@ header img.bg {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* oscurece para legibilidad */
     z-index: -1;
   }
 
@@ -862,6 +863,7 @@ header img.bg {
     z-index: 2;
   }
 }
+
 
 
 
