@@ -810,13 +810,12 @@ header img.bg {
   .miembros {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
     gap: 30px;
+    justify-items: center;
     padding: 20px;
   }
 
   .miembro {
-    width: 100%;
     max-width: 300px;
     text-align: center;
   }
@@ -834,12 +833,13 @@ header img.bg {
     font-size: 1.1rem;
   }
 
-  /* Si hay número impar, centra el último con clase manual */
-  .miembro.centrar-ultimo {
+  /* Centrar el último cuando hay número impar (solo si hay 5) */
+  .miembros > .miembro:nth-child(5):last-child {
     grid-column: span 2;
     justify-self: center;
   }
 }
+
 
 
 
