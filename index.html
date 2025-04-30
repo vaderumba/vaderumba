@@ -9,7 +9,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
+.titulo-navbar {
+  display: none;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+  flex: 1;                 /* ✅ hace que crezca y ocupe el espacio entre la hamburguesa y los enlaces */
+  justify-content: center; /* ✅ centra el contenido horizontalmente */
+  align-items: center;
+}
 
+@media (max-width: 768px) {
+  .titulo-navbar {
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .titulo-navbar.visible {
+    opacity: 1;
+  }
+}
 .contenido {
   max-width: 900px;
   margin: auto;
@@ -212,6 +233,9 @@ nav .links {
     left: 0;
     right: 0;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   nav .menu {
@@ -280,14 +304,14 @@ nav .links {
     filter: brightness(0.4);
   }
 
-  h1 {
-    font-size: 8rem;
-    color: white;
-    text-shadow: 2px 2px 4px black;
-    text-transform: uppercase;
-    font-family: 'Anton', sans-serif;
-  }
-
+h1 {
+  font-size: 8rem;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  text-transform: uppercase;
+  font-family: 'Anton', sans-serif;
+  transition: opacity 0.3s ease;
+}
   h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-size: 4rem;
@@ -471,14 +495,29 @@ nav .links {
 
 /* Ajuste en móvil: centrado también */
 @media (max-width: 768px) {
-  nav {
-    padding: 2px 10px;
-    height: 36px; 
+   nav {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start; /* ✅ Ahora la hamburguesa va a la izquierda */
+    justify-content: flex-start; /* ✅ coloca la hamburguesa a la izquierda */
     align-items: center;
+    height: 44px;
+    padding: 2px 10px;
   }
+
+  .titulo-navbar {
+    display: flex;         /* ✅ se activa solo en móvil */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    flex: 1;               /* ✅ ocupa el espacio restante */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titulo-navbar.visible {
+    opacity: 1;
+  }
+}
 
   nav .menu {
     display: flex;
@@ -594,6 +633,7 @@ header img.bg {
     <div></div>
     <div></div>
   </div>
+  <div class="titulo-navbar">VA DE RUMBA</div>
   <div class="links">
     <a href="#conciertos">CONCIERTOS</a>
     <a href="#multimedia">MULTIMEDIA</a>
@@ -717,9 +757,20 @@ Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de
   });
 
   const botonSubir = document.querySelector('.subir');
-  window.addEventListener('scroll', () => {
-    botonSubir.classList.toggle('mostrar', window.scrollY > 200);
-  });
+const headerTitle = document.querySelector('header h1');
+const navTitle = document.querySelector('.titulo-navbar');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  if (scrollY > 100 && window.innerWidth <= 768) {
+    headerTitle.style.opacity = '0'; // Oculta el h1
+    navTitle.classList.add('visible'); // Muestra "VA DE RUMBA" en nav
+  } else {
+    headerTitle.style.opacity = '1'; // Vuelve a mostrar h1
+    navTitle.classList.remove('visible'); // Oculta texto del nav
+  }
+});
 </script>
 
 </body>
