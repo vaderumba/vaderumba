@@ -387,10 +387,7 @@ section#multimedia {
   background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
 }
 
-section#miembros {
-padding-top: 50px;
-  background: linear-gradient(to bottom, #e6e6e6, #dddddd);
-}
+
 
 section#redes {
 padding-top: 50px;
@@ -859,6 +856,26 @@ header img.bg {
     position: relative;
     z-index: 1;
   }
+}
+section#miembros {
+  position: relative;
+  padding-top: 50px;
+  background: url('fondomiembros.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+section#miembros::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6); /* blanco semitransparente */
+  z-index: 0;
+}
+
+section#miembros .contenido {
+  position: relative;
+  z-index: 1;
 }
 
 
