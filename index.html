@@ -834,11 +834,13 @@ header img.bg {
     font-size: 1.1rem;
   }
 
-  /* Centrar el último cuando hay número impar */
-  .miembros:has(.miembro:nth-child(5):last-child) {
-    grid-template-columns: 1fr;
+  /* Si hay número impar, centra el último con clase manual */
+  .miembro.centrar-ultimo {
+    grid-column: span 2;
+    justify-self: center;
   }
 }
+
 
 
 </style>
