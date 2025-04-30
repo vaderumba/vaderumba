@@ -10,16 +10,15 @@
   <style>
 
 .titulo-navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  display: none;
   font-family: 'Anton', sans-serif;
   font-size: 1.6rem;
   color: white;
   text-align: right;
   opacity: 0;
   transition: opacity 0.3s ease;
-  flex: 1;
+  margin-left: auto; /* 👉 empuja hacia la derecha */
+  padding-right: 10px; /* 👉 opcional: espacio desde el borde */
 }
 
 @media (max-width: 768px) {
