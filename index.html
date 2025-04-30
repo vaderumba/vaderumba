@@ -400,8 +400,25 @@ section#conciertos ul {
 
 section#multimedia {
   padding-top: 50px;
-  background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
+  position: relative;
+  background: url('fondomiembrossocial.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
 }
+
+section#multimedia::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5); /* ajusta opacidad si quieres suavizar el fondo */
+  z-index: 0;
+}
+
+section#multimedia .contenido {
+  position: relative;
+  z-index: 1;
+}
+
 
 
 
@@ -878,7 +895,7 @@ header img.bg {
 section#miembros {
   position: relative;
   padding-top: 50px;
-  background: url('fondomiembros.png') no-repeat center center;
+  background: url('fondomiembrossocial.png') no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
 }
@@ -887,9 +904,10 @@ section#miembros::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.6); /* blanco semitransparente */
+  background: rgba(255, 255, 255, 0.5); /* ajusta al gusto */
   z-index: 0;
 }
+
 
 section#miembros .contenido {
   position: relative;
