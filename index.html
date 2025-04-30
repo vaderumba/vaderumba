@@ -666,28 +666,6 @@ header img.bg {
 }
 
 
-/* Degradado a transparente en móvil */
-@media (max-width: 768px) {
-  header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 100%);
-    z-index: 1;
-    pointer-events: none; /* no bloquea clics */
-  }
-
-  header img.bg {
-    z-index: 0; /* asegura que la imagen quede detrás del degradado */
-  }
-
-  header h1 {
-    z-index: 2; /* mantiene visible el título sobre el degradado */
-  }
-}
 
 
 </style>
