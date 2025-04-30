@@ -406,10 +406,12 @@ section#multimedia {
 
 
 section#redes {
-padding-top: 50px;
-  background: linear-gradient(to bottom, #dddddd, #d4d4d4);
+  padding-top: 50px;
+  background: url('fondosocial.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  position: relative;
 }
-
 
 
 
@@ -894,6 +896,18 @@ section#miembros .contenido {
   z-index: 1;
 }
 
+section#redes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* oscurece un poco el fondo */
+  z-index: 0;
+}
+
+section#redes .contenido {
+  position: relative;
+  z-index: 1;
+}
 
 
 
