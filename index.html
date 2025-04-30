@@ -841,10 +841,12 @@ header img.bg {
 }
 .video-responsive {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  padding-top: 25px;
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   overflow: hidden;
+  border-radius: 12px; /* opcional */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
 }
 
 .video-responsive iframe {
@@ -853,6 +855,7 @@ header img.bg {
   left: 0;
   width: 100%;
   height: 100%;
+  border: none;
 }
 
 
