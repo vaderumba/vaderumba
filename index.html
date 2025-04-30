@@ -842,10 +842,11 @@ header img.bg {
 }
 .video-responsive {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
+  width: 100%;
+  padding-top: 56.25%; /* Relación de aspecto 16:9 */
   overflow: hidden;
-  border-radius: 12px; /* opcional */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   margin-bottom: 30px;
 }
 
@@ -856,7 +857,9 @@ header img.bg {
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover; /* Simula el comportamiento de 'cover' */
 }
+
 
 
 
