@@ -376,58 +376,29 @@ h1 {
   }
 section#conciertos {
   max-width: 100%;
-  padding: 40px 20px 10px 20px;
+  padding: 40px 20px 10px 20px; /* top 20px, right/left 20px, bottom 10px */
   text-align: center;
-  background: url('fondoconciertos.png') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
-  position: relative;
-}
-section#conciertos::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.6); /* puedes ajustar la opacidad/color */
-  z-index: 0;
-}
-
-section#conciertos .contenido,
-section#conciertos ul {
-  position: relative;
-  z-index: 1;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
 }
 
 
 section#multimedia {
   padding-top: 50px;
-  position: relative;
-  background: url('fondomiembrossocial.png') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
+  background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
 }
 
-section#multimedia::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.5); /* ajusta opacidad si quieres suavizar el fondo */
-  z-index: 0;
+section#miembros {
+padding-top: 50px;
+  background: linear-gradient(to bottom, #e6e6e6, #dddddd);
 }
-
-section#multimedia .contenido {
-  position: relative;
-  z-index: 1;
-}
-
-
-
 
 section#redes {
-  padding-top: 50px;
-  background: url('fondosocial.png') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
-  position: relative;
+padding-top: 50px;
+  background: linear-gradient(to bottom, #dddddd, #d4d4d4);
+}
+
+section#contacto {
+  background: linear-gradient(to bottom, #d4d4d4, #cccccc);
 }
 
 
@@ -773,6 +744,9 @@ header img.bg {
     position: absolute;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 20%; /* altura del degradado (ajustable) */
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
     pointer-events: none;
     z-index: 1;
   }
@@ -814,6 +788,10 @@ header img.bg {
     position: absolute;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #f2f2f2);
+    pointer-events: none;
     z-index: 1;
   }
 
@@ -861,66 +839,6 @@ header img.bg {
     justify-self: center;
   }
 }
-@media (max-width: 768px) {
-  #contacto {
-    background: url('fondocontacto.png') no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll;
-    color: white;
-    position: relative;
-    z-index: 1;
-    min-height: 100vh; /* 👈 fuerza a ocupar altura completa de pantalla */
-  }
-
-  #contacto::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
-  }
-
-  #contacto .contenido {
-    position: relative;
-    z-index: 1;
-  }
-}
-section#miembros {
-  position: relative;
-  padding-top: 50px;
-  background: url('fondomiembrossocial.png') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
-}
-
-section#miembros::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.5); /* ajusta al gusto */
-  z-index: 0;
-}
-
-
-section#miembros .contenido {
-  position: relative;
-  z-index: 1;
-}
-
-section#redes::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* oscurece un poco el fondo */
-  z-index: 0;
-}
-
-section#redes .contenido {
-  position: relative;
-  z-index: 1;
-}
-
-
 
 
 
