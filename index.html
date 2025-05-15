@@ -24,40 +24,6 @@
   transition: opacity 0.3s ease;
   z-index: 11;
 }
-
-@media (min-width: 769px) {
-  nav .menu {
-    display: none !important; /* Oculta la hamburguesa */
-  }
-
-  nav .links {
-    display: flex !important;
-    flex-direction: row !important; /* 👉 alinear en fila */
-    justify-content: center;
-    align-items: center;
-    position: static !important;
-    background: transparent !important;
-    padding: 0 !important;
-    gap: 30px;
-    animation: none !important;
-    width: auto;
-  }
-
-  nav .links a {
-    padding: 10px 15px;
-    font-size: 1.4rem;
-    color: white;
-    text-decoration: none;
-    font-family: 'Anton', sans-serif;
-  }
-
-  .titulo-navbar {
-    display: none !important;
-  }
-}
-
-
-
 @media (max-width: 768px) {
   .titulo-navbar {
     display: flex;
@@ -368,27 +334,27 @@ nav .links {
 
 
   header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0;
-  text-align: center;
-}
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+  }
 
+  header img.bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    filter: brightness(0.85);
+  }
 
-header img.bg {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-  display: block;
- filter: brightness(0.85);
-
-}
-
- 
 h1 {
   font-size: 8rem;
   color: white;
@@ -790,20 +756,10 @@ header img.bg {
     z-index: 0;
   }
 
- header h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 8rem;
-  color: white;
-  text-shadow: 2px 2px 4px black;
-  text-transform: uppercase;
-  font-family: 'Anton', sans-serif;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
-
+  header h1 {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 @media (max-width: 1024px) {
