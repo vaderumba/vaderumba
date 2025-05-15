@@ -920,6 +920,19 @@ header img.bg {
 }
 
 @media (min-width: 769px) {
+  header {
+    height: 100vh; /* pantalla completa, o usa un valor como 900px si prefieres */
+  }
+
+  header img.bg {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+
+@media (min-width: 769px) {
   header h1 {
     transform: translateY(110px); /* Ajusta el valor si lo quieres más o menos abajo */
   }
