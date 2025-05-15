@@ -24,6 +24,25 @@
   transition: opacity 0.3s ease;
   z-index: 11;
 }
+
+@media (min-width: 769px) {
+  nav .menu {
+    display: none;
+  }
+
+  nav .links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    gap: 30px;
+    animation: none;
+  }
+}
+
+
+
 @media (max-width: 768px) {
   .titulo-navbar {
     display: flex;
