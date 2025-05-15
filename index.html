@@ -27,25 +27,32 @@
 
 @media (min-width: 769px) {
   nav .menu {
-    display: none !important; /* Oculta el icono hamburguesa en escritorio */
+    display: none !important; /* Oculta la hamburguesa */
   }
 
   nav .links {
     display: flex !important;
-    flex-direction: row;
+    flex-direction: row !important; /* 👉 alinear en fila */
     justify-content: center;
     align-items: center;
-    position: static;
-    background: none;
-    padding: 0;
-    gap: 40px;
-    animation: none;
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    gap: 30px;
+    animation: none !important;
+    width: auto;
   }
 
   nav .links a {
     padding: 10px 15px;
-    border-radius: 0;
     font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .titulo-navbar {
+    display: none !important;
   }
 }
 
