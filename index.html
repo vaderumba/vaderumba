@@ -368,26 +368,27 @@ nav .links {
 
 
   header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 60px;
-  }
-
- header img.bg {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  text-align: center;
+}
+
+
+header img.bg {
   width: 100%;
   height: auto;
   object-fit: contain;
   object-position: center;
-  z-index: -1;
-  filter: brightness(0.85);
+  display: block;
+ filter: brightness(0.85);
+
 }
 
+ 
 h1 {
   font-size: 8rem;
   color: white;
@@ -789,10 +790,20 @@ header img.bg {
     z-index: 0;
   }
 
-  header h1 {
-    position: relative;
-    z-index: 2;
-  }
+ header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  text-transform: uppercase;
+  font-family: 'Anton', sans-serif;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
 }
 
 @media (max-width: 1024px) {
