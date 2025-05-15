@@ -10,6 +10,25 @@
   <link rel="icon" href="favicon.png" type="image/png">
 <style>
   
+@media (min-width: 769px) {
+  #conciertos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    list-style: none;
+  }
+
+  #conciertos ul li {
+    flex: 0 1 45%; /* dos columnas con separación */
+    max-width: 45%;
+  }
+}
+
+
+
+
 .titulo-navbar {
   display: none;
   font-family: 'Anton', sans-serif;
@@ -362,10 +381,6 @@ nav .links {
 }
 
 
-
-
-
-
   header {
   position: relative;
   display: flex;
@@ -481,6 +496,34 @@ section#contacto {
     display: none;
     transition: opacity 0.3s ease;
   }
+
+.boton-entrada {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.boton-entrada:hover {
+  background: #2980b9;
+}
+
+.entrada-gratis {
+  display: inline-block;
+  background: #b8f9b2;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+}
+
+
 
   .subir.mostrar {
     display: block;
@@ -918,25 +961,27 @@ header img.bg {
   <section id="conciertos">
     <h2>Conciertos</h2>
     <ul style="font-size: 1.5rem; list-style: none; padding: 0;">
-      <li>
-         <li>
-      <div class="evento">
-        <div class="dia">15 JUNIO</div>
-        <div class="detalle">📍Destino Puerto, Valencia — 18:00h</div>
-        <div style="margin-top: 10px;">
-          <a href="https://images-eu.ssl-images-amazon.com/images/I/614Srck-5HL._AC_UL210_SR210,210_.jpg" target="_blank" style="display: inline-block; background: #3498db; color: white; padding: 10px 20px; border-radius: 8px; font-family: 'Anton', sans-serif; font-size: 1.1rem; text-decoration: none; transition: background 0.3s ease;">COMPRAR ENTRADA</a>
-        </div>
+      <ul>
+  <li>
+    <div class="evento">
+      <div class="dia">15 JUNIO</div>
+      <div class="detalle">📍Destino Puerto, Valencia — 18:00h</div>
+      <div style="margin-top: 10px;">
+        <a href="..." target="_blank" class="boton-entrada">COMPRAR ENTRADA</a>
       </div>
-    </li>
- <li>
-      <div class="evento">
-        <div class="dia">5 JULIO</div>
-        <div class="detalle">📍La Torreta 1888 — 18:00h</div>
-        <div style="margin-top: 10px;">
-          <div style="display: inline-block; background: #b8f9b2; color: #111; padding: 10px 20px; border-radius: 8px; font-family: 'Anton', sans-serif; font-size: 1.1rem;">ENTRADA GRATUITA</div>
-        </div>
+    </div>
+  </li>
+  <li>
+    <div class="evento">
+      <div class="dia">5 JULIO</div>
+      <div class="detalle">📍La Torreta 1888 — 18:00h</div>
+      <div style="margin-top: 10px;">
+        <div class="entrada-gratis">ENTRADA GRATUITA</div>
       </div>
-    </li>
+    </div>
+  </li>
+</ul>
+
 
     </ul>
   </section>
