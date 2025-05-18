@@ -480,23 +480,6 @@ section#contacto {
     transform: scale(1.2);
   }
 
-  .subir {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(0,0,0,0.3);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    z-index: 20;
-    display: none;
-    transition: opacity 0.3s ease;
-  }
-
 .boton-entrada {
   display: inline-block;
   background: #3498db;
@@ -525,14 +508,32 @@ section#contacto {
 
 
 
-  .subir.mostrar {
-    display: block;
-  }
+ .subir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #999; /* gris claro */
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 20;
+  display: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-  .subir:hover {
-    transform: scale(1.1);
-  }
+.subir:hover {
+  transform: translateY(-2px);
+  background-color: #777; /* tono más oscuro al pasar el ratón */
+}
 
+.subir.mostrar {
+  display: block;
+  opacity: 1;
+}
   iframe {
     width: 100%;
     height: 315px;
