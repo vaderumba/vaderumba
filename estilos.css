@@ -49,26 +49,9 @@ header h1 {
 ============================= */
 @media (max-width: 768px) {
   header {
-    height: 280px;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-  }
-
-  header h1 {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-
-  .overlay-degradado {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%);
-    z-index: 1;
-    pointer-events: none;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 40px;
   }
 }
 
@@ -77,26 +60,8 @@ header h1 {
 ============================= */
 @media (min-width: 769px) and (max-width: 1024px) {
   header {
-    height: 300px;
-    overflow: hidden;
+    height: 360px;
     padding: 0;
-    position: relative;
-  }
-
-  header h1 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-
-  .overlay-degradado {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%);
-    z-index: 1;
-    pointer-events: none;
   }
 }
 
@@ -112,9 +77,9 @@ header h1 {
 
   header h1 {
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 30%; /* Ajusta según lo alto que quieras el texto */
+    left: center;
+    transform: translateX(-50%);
     z-index: 2;
   }
 }
