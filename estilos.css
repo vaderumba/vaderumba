@@ -48,12 +48,14 @@ header h1 {
    MÓVILES: <=768px
 ============================= */
 
-  background-size: 90% auto;
+  background-size: 100% auto;
   background-position: top;
   background-attachment: scroll;
   filter: brightness(0.95);
 @media (max-width: 768px) {
   header {
+    height: 300px;
+    overflow: hidden;
     height: auto;
     padding-top: 80px;
     padding-bottom: 40px;
@@ -79,6 +81,8 @@ header h1 {
   filter: brightness(0.95);
 @media (min-width: 769px) and (max-width: 1024px) {
   header {
+    height: 300px;
+    overflow: hidden;
     height: 360px;
     padding: 0;
     position: relative;
