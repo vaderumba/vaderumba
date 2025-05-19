@@ -47,6 +47,11 @@ header h1 {
 /* ============================
    MÓVILES: <=768px
 ============================= */
+
+  background-size: 100% auto;
+  background-position: top;
+  background-attachment: scroll;
+  filter: brightness(0.95);
 @media (max-width: 768px) {
   header {
     height: auto;
@@ -67,6 +72,11 @@ header h1 {
 /* ============================
    TABLETAS: 769px a 1024px
 ============================= */
+
+  background-size: 100% auto;
+  background-position: top;
+  background-attachment: scroll;
+  filter: brightness(0.95);
 @media (min-width: 769px) and (max-width: 1024px) {
   header {
     height: 360px;
