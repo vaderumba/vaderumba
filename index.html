@@ -8,1157 +8,174 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-A5U9Xen9QvH7uE3r3Jv6EmPRcI9lqHoKYnlh8vFvA29OV06vS4Hx6nQceHuMX5nGJc32WTT6XTL/1IzsZwQ5Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="icovaderumba.ico" type="image/png">
-<link rel="stylesheet" href="estilos.css" />
-<style>
-  
-@media (min-width: 769px) {
-  #conciertos ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 0;
-    list-style: none;
-  }
-
-  #conciertos ul li {
-    flex: 0 1 45%; /* dos columnas con separación */
-    max-width: 45%;
-  }
-}
-
-
-
-
-.titulo-navbar {
-  display: none;
-  font-family: 'Anton', sans-serif;
-  font-size: 1.6rem;
-  color: white;
-  text-align: right;
-  position: absolute;
-  right: 20px; /* 👉 margen opcional desde el borde derecho */
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 11;
-}
-
-@media (min-width: 769px) {
-  nav .menu {
-    display: none !important; /* Oculta la hamburguesa */
-  }
-
-  nav .links {
-    display: flex !important;
-    flex-direction: row !important; /* 👉 alinear en fila */
-    justify-content: center;
-    align-items: center;
-    position: static !important;
-    background: transparent !important;
-    padding: 0 !important;
-    gap: 30px;
-    animation: none !important;
-    width: auto;
-  }
-
-  nav .links a {
-    padding: 10px 15px;
-    font-size: 1.4rem;
-    color: white;
-    text-decoration: none;
-    font-family: 'Anton', sans-serif;
-  }
-
-  .titulo-navbar {
-    display: none !important;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .titulo-navbar {
-    display: flex;
-    opacity: 0;
-    align-items: center;
-    justify-content: flex-end;
-    margin-left: auto;
-    padding-right: 10px;
-  }
-
-  .titulo-navbar.visible {
-    opacity: 1;
-  }
-}
-.contenido {
-  max-width: 900px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-section h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-section ul {
-  margin-bottom: 0;
-}
-
-
-.bio-nosotros {
-  font-size: 1.4rem;
-  font-family: 'Bebas Neue', sans-serif;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-  line-height: 1.6;
-  text-align: justify; /* 👈 Esto justifica el texto */
-  color: #333;
-}
-
-
-
-.iconos-redes-mejorado {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  max-width: 100%;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-
-.tarjeta-red {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%; /* 🔵 círculo perfecto */
-  width: 140px;
-  height: 140px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  overflow: hidden; /* evita que el contenido sobresalga del círculo */
-}
-.tarjeta-red {
-  border-radius: 50%;
-  width: 140px;
-  height: 140px;
-  overflow: hidden;
-  justify-content: center;
-}
-
-.tarjeta-red.instagram {
-  background: linear-gradient(135deg, #f58529, #dd2a7b); /* rosa-naranja IG */
-  color: white;
-}
-
-.tarjeta-red.tiktok {
-  background: linear-gradient(135deg, #ff0050, #8f00ff); /* rosa y violeta TikTok */
-  color: white;
-}
-
-.tarjeta-red.facebook {
-  background-color: #3b5998; /* azul Facebook */
-  color: white;
-}
-
-.tarjeta-red span {
-  font-family: 'Anton', sans-serif;
-  font-size: 0.9rem;
-  text-align: center;
-  color: inherit;
-}
-
-.tarjeta-red img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  margin-bottom: 6px;
-  transition: transform 0.3s ease;
-}
-
-.tarjeta-red:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-
-.tarjeta-red img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  margin-bottom: 6px;
-  transition: transform 0.3s ease;
-}
-
-.tarjeta-red span {
-  font-family: 'Anton', sans-serif;
-  color: #111;
-  font-size: 0.9rem;
-  margin-top: 2px;
-  text-align: center;
-}
-
-.tarjeta-red:hover img {
-  transform: scale(1.1);
-}
-
-
-.spotify-card {
-  width: 100%;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.spotify-clip {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  height: 360px; /* puedes ajustar si lo ves corto/largo */
-}
-
-.spotify-clip iframe {
-  width: 100%;
-  height: 380px;
-  border: none;
-  margin-top: -10px; /* 👈 TRUCO: sube el contenido 10px para ocultar esa franja negra */
-  display: block;
-}
-
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-.subir {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.subir.mostrar {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.iconos-redes a {
-  font-size: 2.5rem;
-  color: #111;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.iconos-redes a:hover {
-  transform: scale(1.2);
-  color: #f39c12;
-}
-
-
-  body {
-    margin: 0;
-    font-family: 'Bebas Neue', sans-serif;
-    scroll-behavior: smooth;
-    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
-    animation: fadeIn 1s ease;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  nav .menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  nav .menu div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px;
-  }
-
-nav .links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
-}
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-family: 'Anton', sans-serif;
-  }
-
-  nav a:hover {
-    color: #f39c12;
-  }
-
-
-
-
- /* --- Estilos generales ya existentes arriba (los puedes dejar igual) --- */
-
-/* --- Ajustes específicos para móviles --- */
- nav {
-    padding: 4px 10px;
-    margin: 0;
-    line-height: 1;
-    height: 44px; /* 👈 define altura exacta */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  nav .menu {
-    display: flex;
-  }
-
-  nav .links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 20px; /* 👈 ahora sí: menú pegado sin hueco */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 0;
-    gap: 15px;
-    text-align: center;
-    z-index: 9;
-    animation: slideFadeIn 0.3s ease forwards;
-  }
-
-  nav .links.active {
-    display: flex;
-  }
-
-  nav .menu div {
-    margin: 2px; /* opcional: menos espacio entre rayitas del botón */
-  }
-  @keyframes slideFadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-}
-
-
-  header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0;
-  text-align: center;
-}
-
-
-header img.bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
-  filter: brightness(0.85);
-}
-
-
- 
-h1 {
-  font-size: 8rem;
-  color: white;
-  text-shadow: 2px 2px 4px black;
-  text-transform: uppercase;
-  font-family: 'Anton', sans-serif;
-  transition: opacity 0.3s ease;
-}
-  h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-family: 'Anton', sans-serif;
-  }
-
-  section {
-    padding: 20px 10px;
-    max-width: 100%;
-    margin: auto;
- text-align: center;
-  }
-section#conciertos {
-  max-width: 100%;
-  padding: 40px 20px 10px 20px; /* top 20px, right/left 20px, bottom 10px */
-  text-align: center;
-  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
-}
-
-
-section#multimedia {
-  padding-top: 50px;
-  background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
-}
-
-section#miembros {
-padding-top: 50px;
-  background: linear-gradient(to bottom, #e6e6e6, #dddddd);
-}
-
-section#redes {
-padding-top: 50px;
-  background: linear-gradient(to bottom, #dddddd, #d4d4d4);
-}
-
-section#contacto {
-  background: linear-gradient(to bottom, #d4d4d4, #cccccc);
-}
-
-
-
-
-  @media (max-width: 768px) {
-    section {
-      padding: 30px 15px;
-    }
-  }
-
-  .redes-iconos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 3rem;
-    margin-top: 30px;
-    flex-wrap: wrap;
-  }
-
-  .redes-iconos a {
-    color: #111;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
-
-  .redes-iconos a:hover {
-    transform: scale(1.2);
-  }
-
-.boton-entrada {
-  display: inline-block;
-  background: #3498db;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-family: 'Anton', sans-serif;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.boton-entrada:hover {
-  background: #2980b9;
-}
-
-.entrada-gratis {
-  display: inline-block;
-  background: #b8f9b2;
-  color: #111;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-family: 'Anton', sans-serif;
-  font-size: 1.1rem;
-}
-
-
-
-.subir {
-  position: fixed;
-  bottom: 30px;
-  right: -5px; /* más visible que -20px */
-  width: 40px;
-  height: 40px;
-  background-color: rgba(153, 153, 153, 0.6);
-  color: white;
-  border-radius: 8px 0 0 8px; /* redondeado solo a la izquierda */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  z-index: 20;
-  opacity: 0;
-  pointer-events: none;
-  transition: right 0.3s ease, opacity 0.3s ease;
-}
-
-.subir.mostrar {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.subir:hover {
-  right: 0; /* completamente visible al pasar el ratón */
-  background-color: #777;
-}
-
-
-  iframe {
-    width: 100%;
-    height: 315px;
-    margin-top: 20px;
-  }
-
-  .miembros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .miembro {
-    text-align: center;
-  }
-
-  .miembro img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-
-  .miembro h3 {
-       font-size: 1.6rem;
-       margin: 10px 0 4px 0;
-  }
-
-  .miembro p {
-    font-size: 1rem;
-    margin: 0; /* sin margen extra */
-  }
-
-  @media (max-width: 768px) {
-    header {
-      height: auto;
-      padding-top: 80px;
-      padding-bottom: 40px;
-    }
-
-    header img.bg {
-      height: auto;
-      max-height: 80vh;
-      object-fit: contain;
-    }
-
-    h1 {
-      font-size: 3rem;
-      padding: 20px;
-    }
-
-    h2 {
-      font-size: 3rem;
-    }
-
-    .redes-iconos {
-      font-size: 2rem;
-      gap: 15px;
-    }
-
-    .miembro img {
-      width: 150px;
-      height: 150px;
-    }
-
-
-  }
-
-  .iconos-redes img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .iconos-redes a:hover img {
-    transform: scale(1.2);
-    filter: brightness(1.2);
-  }
-
-/* Centrar títulos */
-h1, h2, h3, h4, h5, h6 {
-  text-align: center;
-}
-
-/* Centrar texto de los enlaces del menú */
-nav .links {
-  justify-content: center;
-  text-align: center;
-}
-
-/* Ajuste en móvil: centrado también */
-@media (max-width: 768px) {
-   nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start; /* ✅ coloca la hamburguesa a la izquierda */
-    align-items: center;
-    height: 40px;
-    padding: 2px 10px;
-  }
-
-  .titulo-navbar {
-    display: flex;         /* ✅ se activa solo en móvil */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    flex: 1;               /* ✅ ocupa el espacio restante */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .titulo-navbar.visible {
-    opacity: 1;
-  }
-}
-
-  nav .menu {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 4px;
-    z-index: 11;
-  }
-
-  nav .menu div {
-    width: 25px;
-        height: 2px;           /* 🔧 barras más finas */
-    margin: 3px;           /* 🔧 menos espacio entre barras */
-    background-color: white;
-    transition: all 0.3s ease;
-  }
-
-  nav .menu.active div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  nav .menu.active div:nth-child(2) {
-    opacity: 0;
-  }
-
-  nav .menu.active div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  nav .links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 44px;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* semi-transparente como la barra */
-  padding: 20px 0; /* más altura vertical */
-  gap: 20px; /* más separación entre los enlaces */
-  text-align: center;
-  z-index: 9;
-  animation: slideFadeIn 0.3s ease forwards;
-}
-
-nav .links a {
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-nav .links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-
-  nav .links.active {
-    display: flex;
-  }
-
-  @keyframes slideFadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-header img.bg {
-  animation: pan 30s ease-in-out infinite alternate;
-}
-
-/* Animación del botón hamburguesa a X */
-.menu div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px;
-  transition: all 0.4s ease;
-}
-
-.menu.active div:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.menu.active div:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-#conciertos ul {
-  text-align: center;
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-  line-height: 1.6;
-}
-
-.evento {
-  margin-bottom: 25px;
-}
-
-.evento .dia {
-  font-size: 1.6rem;
-  font-weight: bold;
-  font-family: 'Anton', sans-serif;
-}
-
-.evento .detalle {
-  font-size: 1.5rem;
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-@media (max-width: 768px) {
-  .tarjeta-red {
-    width: 90px;
-    height: 90px;
-  }
-
-  .tarjeta-red img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .tarjeta-red span {
-    font-size: 0.75rem;
-  }
-
-  .iconos-redes-mejorado {
-    gap: 15px; /* reduce el espacio entre iconos */
-    flex-wrap: nowrap; /* fuerza que estén en una sola línea */
-    overflow-x: auto;  /* permite scroll horizontal si no caben del todo */
-  }
-}
-@media (max-width: 768px) {
-  .miembros {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .miembro img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .miembro h3 {
-    font-size: 2rem;
-  }
-
-  .miembro p {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 768px) {
-  header {
-    position: relative;
-  }
-
-  header::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%; /* altura del degradado (ajustable) */
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  header img.bg {
-    z-index: 0;
-  }
-
-  header h1 {
-    position: relative;
-    z-index: 2;
-  }
-}
-
-@media (max-width: 1024px) {
-  body {
-    margin-top: 44px; /* igual que la altura de la barra de navegación fija */
-  }
-
-  header {
-    height: 360px;     /* ajusta según necesites */
-    padding: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  header img.bg {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-  }
-
-  header::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), #f2f2f2);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  header h1 {
-    font-size: 3rem;
-    z-index: 2;
-    position: relative;
-  }
-
-  section {
-    padding-top: 30px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .miembros {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    justify-items: center;
-    padding: 20px;
-  }
-
-  .miembro {
-    max-width: 300px;
-    text-align: center;
-  }
-
-  .miembro img {
-    width: 180px;
-    height: 180px;
-  }
-
-  .miembro h3 {
-    font-size: 1.6rem;
-  }
-
-  .miembro p {
-    font-size: 1.1rem;
-  }
-
-  /* Centrar el último cuando hay número impar (solo si hay 5) */
-  .miembros > .miembro:nth-child(5):last-child {
-    grid-column: span 2;
-    justify-self: center;
-  }
-}
-
-@media (min-width: 769px) {
-  header {
-    height: 100vh; /* pantalla completa, o usa un valor como 900px si prefieres */
-  }
-
-  header img.bg {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
-
-@media (min-width: 769px) {
-  header h1 {
-    transform: translateY(300px); /* Ajusta el valor si lo quieres más o menos abajo */
-  }
-}
-@media (min-width: 769px) {
-  header h1 {
-    margin-top: 20px; /* Ajusta el valor si quieres más o menos espacio */
-  }
-}
-
-
-@media (min-width: 769px) {
-  header {
-    padding-top: 60px; /* igual a la altura del nav */
-    height: calc(100vh - 60px); /* opcional: para que siga ocupando toda la pantalla sin solaparse */
-  }
-}
-
-</style>
-  <script>
-    window.addEventListener('scroll', () => {
-      const subir = document.querySelector('.subir');
-      if (window.scrollY > 200) {
-        subir.classList.add('mostrar');
-      } else {
-        subir.classList.remove('mostrar');
-      }
-    });
-  </script>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
   <nav>
-  <div class="menu" aria-label="Menú de navegación">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="titulo-navbar">VA DE RUMBA</div>
-  <div class="links">
-    <a href="#conciertos">CONCIERTOS</a>
-    <a href="#multimedia">MULTIMEDIA</a>
-    <a href="#miembros">NOSOTROS</a>
-    <a href="#redes">REDES SOCIALES</a>
-    <a href="#contacto">CONTACTO</a>
-  </div>
-</nav>
+    <div class="menu" aria-label="Menú de navegación">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="titulo-navbar">VA DE RUMBA</div>
+    <div class="links">
+      <a href="#conciertos">CONCIERTOS</a>
+      <a href="#multimedia">MULTIMEDIA</a>
+      <a href="#miembros">NOSOTROS</a>
+      <a href="#redes">REDES SOCIALES</a>
+      <a href="#contacto">CONTACTO</a>
+    </div>
+  </nav>
 
   <header>
-  <div class="overlay-degradado"></div>
     <div class="overlay-degradado"></div>
     <img class="bg" src="Grupo.jpg" alt="Foto del grupo Va de Rumba" />
     <h1>VA DE RUMBA</h1>
   </header>
 
- <a href="#" class="subir" aria-label="Volver arriba">↑</a>
+  <a href="#" class="subir" aria-label="Volver arriba">^</a>
 
   <section id="conciertos">
     <h2>Conciertos</h2>
-    <ul style="font-size: 1.5rem; list-style: none; padding: 0;">
-      <ul>
-  <li>
-    <div class="evento">
-      <div class="dia">15 JUNIO</div>
-      <div class="detalle">📍Destino Puerto, Valencia — 18:00h</div>
-      <div style="margin-top: 10px;">
-        <a href="https://www.fourvenues.com/es/destino-puerto/events/san-tardeo-by-vaderumba-15-06-2025-030H" target="_blank" class="boton-entrada">COMPRAR ENTRADA</a>
-      </div>
-    </div>
-  </li>
-  <li>
-    <div class="evento">
-      <div class="dia">5 JULIO</div>
-      <div class="detalle">📍La Torreta 1888, Torrent — 18:00h</div>
-      <div style="margin-top: 10px;">
-        <div class="entrada-gratis">ENTRADA GRATUITA</div>
-      </div>
-    </div>
-  </li>
-</ul>
-
-
+    <ul>
+      <li>
+        <div class="evento">
+          <div class="dia">15 JUNIO</div>
+          <div class="detalle">📍Destino Puerto, Valencia — 18:00h</div>
+          <div>
+            <a href="https://www.fourvenues.com/es/destino-puerto/events/san-tardeo-by-vaderumba-15-06-2025-030H" target="_blank" class="boton-entrada">COMPRAR ENTRADA</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="evento">
+          <div class="dia">5 JULIO</div>
+          <div class="detalle">📍La Torreta 1888, Torrent — 18:00h</div>
+          <div>
+            <div class="entrada-gratis">ENTRADA GRATUITA</div>
+          </div>
+        </div>
+      </li>
     </ul>
   </section>
 
   <section id="multimedia">
     <div class="contenido">
-    <h2>Multimedia</h2>
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen></iframe>
+      <h2>Multimedia</h2>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/VWS1fLSmFYU?si=e4ab7rK1EJpBr-hg" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Vmlj_QEqkoo?si=yKhdADyKtA5sAzls" allowfullscreen></iframe>
+      </div>
+      <div class="spotify-card">
+        <div class="spotify-clip">
+          <iframe src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
     </div>
-<div class="spotify-card">
-  <div class="spotify-clip">
-    <iframe
-      src="https://open.spotify.com/embed/artist/1LBaiPJNt2OMJQuZJHkLho?utm_source=generator"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy">
-    </iframe>
-  </div>
-</div>
-</div>
-
-
-
   </section>
 
   <section id="miembros">
-   <div class="contenido">
-    <h2>Nosotros</h2>
-<p class="bio-nosotros">
- Somos Va de Rumba, cinco colegas con ganas de montar la fiesta allá donde vayamos. Mezclamos rumba y pop-rock para que no puedas quedarte quieto.
-En el grupo estamos Toni, Alejandro y Jose dándole a la voz, Rubén marcando el ritmo en la percusión y Rafa metiendo caña con el bajo. Hacemos música para disfrutar, cantar a gritos y pasarlo en grande.
-Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de rumba con nosotros!
-</p>
-
-    <div class="miembros">
-      <div class="miembro"><img src="TONI.JPG" alt="Toni" /><h3>Toni</h3><p>Voz y guitarra</p></div>
-      <div class="miembro"><img src="ALEJANDRO.JPG" alt="Alejandro" /><h3>Alejandro</h3><p>Voz</p></div>
-      <div class="miembro"><img src="JOSE.JPG" alt="Jose" /><h3>Jose</h3><p>Voz</p></div>
-      <div class="miembro"><img src="RUBÉN.JPG" alt="Rubén" /><h3>Rubén</h3><p>Percusión</p></div>
-      <div class="miembro"><img src="RAFA.JPG" alt="Rafa" /><h3>Rafa</h3><p>Bajo</p></div>
-    </div>
+    <div class="contenido">
+      <h2>Nosotros</h2>
+      <p class="bio-nosotros">
+        Somos Va de Rumba, cinco colegas con ganas de montar la fiesta allá donde vayamos. Mezclamos rumba y pop-rock para que no puedas quedarte quieto. En el grupo estamos Toni, Alejandro y Jose dándole a la voz, Rubén marcando el ritmo en la percusión y Rafa metiendo caña con el bajo. Hacemos música para disfrutar, cantar a gritos y pasarlo en grande. Si lo tuyo es el buen rollo y la música que engancha, ¡dale al play y vente de rumba con nosotros!
+      </p>
+      <div class="miembros">
+        <div class="miembro"><img src="TONI.JPG" alt="Toni" /><h3>Toni</h3><p>Voz y guitarra</p></div>
+        <div class="miembro"><img src="ALEJANDRO.JPG" alt="Alejandro" /><h3>Alejandro</h3><p>Voz</p></div>
+        <div class="miembro"><img src="JOSE.JPG" alt="Jose" /><h3>Jose</h3><p>Voz</p></div>
+        <div class="miembro"><img src="RUBÉN.JPG" alt="Rubén" /><h3>Rubén</h3><p>Percusión</p></div>
+        <div class="miembro"><img src="RAFA.JPG" alt="Rafa" /><h3>Rafa</h3><p>Bajo</p></div>
+      </div>
     </div>
   </section>
 
-<section id="redes" class="redes-sociales">
-  <div class="contenido">
-  <h2>Síguenos</h2>
-  <div class="iconos-redes-mejorado">
-   <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red instagram">
-  <img src="instagram.png" alt="Instagram">
-  <span>Instagram</span>
-</a>
-
-<a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank" class="tarjeta-red tiktok">
-  <img src="tiktok.png" alt="TikTok">
-  <span>TikTok</span>
-</a>
-
-<a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank" class="tarjeta-red facebook">
-  <img src="facebook.png" alt="Facebook">
-  <span>Facebook</span>
-</a>
-
-  </div>
- </div>
-</section>
+  <section id="redes" class="redes-sociales">
+    <div class="contenido">
+      <h2>Síguenos</h2>
+      <div class="iconos-redes-mejorado">
+        <a href="https://www.instagram.com/vaderumba/" target="_blank" class="tarjeta-red instagram">
+          <img src="instagram.png" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.tiktok.com/@vaderumbaoficial" target="_blank" class="tarjeta-red tiktok">
+          <img src="tiktok.png" alt="TikTok">
+          <span>TikTok</span>
+        </a>
+        <a href="https://www.facebook.com/p/Va-de-Rumba-grupo-100040034574910/" target="_blank" class="tarjeta-red facebook">
+          <img src="facebook.png" alt="Facebook">
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section id="contacto">
     <div class="contenido">
-    <h2>Contacto</h2>
-    <form action="https://formspree.io/f/xwpokyjj" method="POST" style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
-      <input type="text" name="nombre" placeholder="Tu nombre" required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;">
-      <input type="email" name="email" placeholder="Tu email" required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;">
-      <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje..." required style="padding: 12px; font-size: 1.2rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;"></textarea>
-      <input type="text" name="_gotcha" style="display:none">
-      <button type="submit" style="padding: 12px; font-size: 1.4rem; background-color: black; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Anton', sans-serif; transition: background 0.3s ease;">Enviar</button>
-    </form>
-   </div>
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/xwpokyjj" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+        <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje..." required></textarea>
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   </section>
 
-  <footer style="background-color: black; color: white; text-align: center; padding: 30px 20px; font-size: 1.2rem;">
-    <p style="margin: 0;">&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
+  <footer>
+    <p>&copy; 2025 Va de Rumba. Todos los derechos reservados.</p>
   </footer>
 
-<script>
-  const menuBtn = document.querySelector('.menu');
-  const links = document.querySelector('.links');
+  <script>
+    const menuBtn = document.querySelector('.menu');
+    const links = document.querySelector('.links');
 
-  menuBtn.addEventListener('click', () => {
-    links.classList.toggle('active');
-    menuBtn.classList.toggle('active'); // animación del botón
-  });
+    menuBtn.addEventListener('click', () => {
+      links.classList.toggle('active');
+      menuBtn.classList.toggle('active');
+    });
 
-  document.querySelectorAll('nav .links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
+    document.querySelectorAll('nav .links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          links.classList.remove('active');
+          menuBtn.classList.remove('active');
+        }
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      const isClickInsideMenu = menuBtn.contains(event.target);
+      const isClickInsideLinks = links.contains(event.target);
+
+      if (!isClickInsideMenu && !isClickInsideLinks && window.innerWidth <= 768) {
         links.classList.remove('active');
-        menuBtn.classList.remove('active'); // cerrar animación también
+        menuBtn.classList.remove('active');
       }
     });
-  });
 
-  // 🔽 ESTE BLOQUE ES NUEVO
-  document.addEventListener('click', (event) => {
-    const isClickInsideMenu = menuBtn.contains(event.target);
-    const isClickInsideLinks = links.contains(event.target);
+    const botonSubir = document.querySelector('.subir');
+    const headerTitle = document.querySelector('header h1');
+    const navTitle = document.querySelector('.titulo-navbar');
 
-    if (!isClickInsideMenu && !isClickInsideLinks && window.innerWidth <= 768) {
-      links.classList.remove('active');
-      menuBtn.classList.remove('active');
-    }
-  });
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
 
-  const botonSubir = document.querySelector('.subir');
-  const headerTitle = document.querySelector('header h1');
-  const navTitle = document.querySelector('.titulo-navbar');
+      if (scrollY > 200) {
+        botonSubir.classList.add('mostrar');
+      } else {
+        botonSubir.classList.remove('mostrar');
+      }
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY > 200) {
-      botonSubir.classList.add('mostrar');
-    } else {
-      botonSubir.classList.remove('mostrar');
-    }
-
-    if (scrollY > 100 && window.innerWidth <= 768) {
-      headerTitle.style.opacity = '0'; // Oculta el h1
-      navTitle.classList.add('visible'); // Muestra "VA DE RUMBA" en nav
-    } else {
-      headerTitle.style.opacity = '1'; // Vuelve a mostrar h1
-      navTitle.classList.remove('visible'); // Oculta texto del nav
-    }
-  });
-</script>
-
-
+      if (scrollY > 100 && window.innerWidth <= 768) {
+        headerTitle.style.opacity = '0';
+        navTitle.classList.add('visible');
+      } else {
+        headerTitle.style.opacity = '1';
+        navTitle.classList.remove('visible');
+      }
+    });
+  </script>
 </body>
 </html>
